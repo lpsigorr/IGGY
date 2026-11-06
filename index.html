@@ -1,0 +1,281 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>IGGY Studio | Aussi bien en ligne qu'en vrai</title>
+  <meta name="description" content="Studio créatif à Bruxelles pour les commerces et les indépendants : fiche Google, identité, site web et automatisation. Réservez un check gratuit de 15 minutes.">
+  <meta name="theme-color" content="#E4DFDA">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="assets/fonts/dm-sans-latin-opsz-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/ibm-plex-sans-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <a class="skip" href="#main" data-i18n="skip">Aller au contenu</a>
+
+  <header class="nav" id="nav">
+    <a class="nav__logo" href="#top" aria-label="IGGY Studio">IGGY<span> Studio</span></a>
+
+    <nav class="nav__links" id="nav-links" aria-label="Navigation">
+      <a href="#services" data-i18n="nav.services">Services</a>
+      <a href="#work" data-i18n="nav.work">Réalisations</a>
+      <a href="#studio" data-i18n="nav.studio">Studio</a>
+      <a href="#faq" data-i18n="nav.faq">Questions</a>
+      <a class="btn btn--small nav__cta-mobile" href="#contact" data-i18n="nav.cta">Check gratuit</a>
+    </nav>
+
+    <div class="nav__tools">
+      <div class="lang" role="group" aria-label="Langue" data-i18n-aria="lang.label">
+        <button type="button" data-lang="fr" aria-pressed="true">FR</button>
+        <button type="button" data-lang="nl" aria-pressed="false">NL</button>
+        <button type="button" data-lang="en" aria-pressed="false">EN</button>
+      </div>
+      <a class="btn btn--small nav__cta" href="#contact" data-i18n="nav.cta">Check gratuit</a>
+      <button class="nav__menu" type="button" aria-expanded="false" aria-controls="nav-links" data-i18n="nav.menu">Menu</button>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero" id="top">
+      <figure class="hero__art">
+        <img
+          src="assets/hero.webp"
+          srcset="assets/hero-900.webp 900w, assets/hero.webp 1536w"
+          sizes="(max-width: 899px) 140vw, 66vw"
+          width="1536" height="1024"
+          alt="Silhouette d'une personne dessinée avec des fils entrelacés"
+          data-i18n-alt="hero.alt"
+          fetchpriority="high">
+      </figure>
+
+      <h1 class="hero__title" data-i18n-html="hero.title"><span class="line">Aussi bien en ligne</span> <span class="line">qu'en vrai.</span></h1>
+
+      <div class="hero__foot">
+        <p class="hero__lead" data-i18n="hero.lead">IGGY Studio répare, construit et soigne la présence en ligne des commerces et des indépendants de Bruxelles.</p>
+        <a class="btn" href="#contact" data-i18n="hero.cta">Réserver mon check gratuit</a>
+      </div>
+    </section>
+
+    <section class="section" id="services" aria-labelledby="services-title">
+      <div class="section__inner">
+        <h2 class="h2" data-reveal id="services-title" data-i18n="services.title">Ce qu'on fait</h2>
+        <div class="svc" id="svc">
+          <div class="svc__item is-active">
+            <h3 class="svc__head">
+              <button class="svc__tab" type="button" id="svc-tab-1" aria-expanded="true" aria-controls="svc-panel-1" data-i18n="s1.what"></button>
+            </h3>
+            <div class="svc__panel" id="svc-panel-1" role="region" aria-labelledby="svc-tab-1">
+              <p class="svc__why" data-i18n="s1.why"></p>
+              <p class="svc__text" data-i18n="s1.text"></p>
+              <ul class="svc__tags">
+                <li data-i18n="s1.tag1"></li>
+                <li data-i18n="s1.tag2"></li>
+                <li data-i18n="s1.tag3"></li>
+              </ul>
+            </div>
+          </div>
+          <div class="svc__item">
+            <h3 class="svc__head">
+              <button class="svc__tab" type="button" id="svc-tab-2" aria-expanded="false" aria-controls="svc-panel-2" data-i18n="s2.what"></button>
+            </h3>
+            <div class="svc__panel" id="svc-panel-2" role="region" aria-labelledby="svc-tab-2" hidden>
+              <p class="svc__why" data-i18n="s2.why"></p>
+              <p class="svc__text" data-i18n="s2.text"></p>
+              <ul class="svc__tags">
+                <li data-i18n="s2.tag1"></li>
+                <li data-i18n="s2.tag2"></li>
+                <li data-i18n="s2.tag3"></li>
+              </ul>
+            </div>
+          </div>
+          <div class="svc__item">
+            <h3 class="svc__head">
+              <button class="svc__tab" type="button" id="svc-tab-3" aria-expanded="false" aria-controls="svc-panel-3" data-i18n="s3.what"></button>
+            </h3>
+            <div class="svc__panel" id="svc-panel-3" role="region" aria-labelledby="svc-tab-3" hidden>
+              <p class="svc__why" data-i18n="s3.why"></p>
+              <p class="svc__text" data-i18n="s3.text"></p>
+              <ul class="svc__tags">
+                <li data-i18n="s3.tag1"></li>
+                <li data-i18n="s3.tag2"></li>
+                <li data-i18n="s3.tag3"></li>
+              </ul>
+            </div>
+          </div>
+          <div class="svc__item">
+            <h3 class="svc__head">
+              <button class="svc__tab" type="button" id="svc-tab-4" aria-expanded="false" aria-controls="svc-panel-4" data-i18n="s4.what"></button>
+            </h3>
+            <div class="svc__panel" id="svc-panel-4" role="region" aria-labelledby="svc-tab-4" hidden>
+              <p class="svc__why" data-i18n="s4.why"></p>
+              <p class="svc__text" data-i18n="s4.text"></p>
+              <ul class="svc__tags">
+                <li data-i18n="s4.tag1"></li>
+                <li data-i18n="s4.tag2"></li>
+                <li data-i18n="s4.tag3"></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--work" id="work" aria-labelledby="work-title">
+      <div class="section__inner">
+        <h2 class="h2" data-reveal id="work-title" data-i18n="work.title">Réalisations</h2>
+        <div class="work">
+          <article class="case">
+            <div>
+              <h3 class="case__name">Prolux &amp; Co</h3>
+              <p class="case__where" data-i18n="work.case.where">Couvreur à Zaventem</p>
+            </div>
+            <div>
+              <p class="case__text" data-i18n="work.case.text">Site en français et néerlandais, Google Ads et suivi des visites pour une nouvelle société de toiture.</p>
+              <p class="case__result" data-i18n="work.case.result">Plus de visiteurs et un premier appel.</p>
+            </div>
+          </article>
+          <aside class="next">
+            <h3 class="next__title" data-i18n="work.next.title">Votre commerce pourrait être le prochain cas.</h3>
+            <div>
+              <p class="next__text" data-i18n="work.next.text">Racontez-nous ce dont vous avez besoin.</p>
+              <a class="btn btn--ink" href="#contact" data-i18n="work.next.cta">Parlons-en</a>
+            </div>
+          </aside>
+        </div>
+      </div>
+      <div class="strip" id="work-strip" hidden>
+        <div class="strip__track"></div>
+      </div>
+    </section>
+
+    <section class="section" id="process" aria-labelledby="process-title">
+      <div class="section__inner">
+        <h2 class="h2" data-reveal id="process-title" data-i18n="process.title">Comment ça se passe</h2>
+        <ol class="steps">
+          <li class="step">
+            <h3 class="step__title" data-i18n="p1.title">Check gratuit de 15 minutes</h3>
+            <p class="step__text" data-i18n="p1.text">On regarde votre fiche Google, votre site et votre Instagram, et on vous montre 3 choses à corriger.</p>
+          </li>
+          <li class="step">
+            <h3 class="step__title" data-i18n="p2.title">Devis et date de livraison</h3>
+            <p class="step__text" data-i18n="p2.text">On se met d'accord sur ce qui sera fait, le prix et la date de livraison. Rien ne démarre avant votre accord.</p>
+          </li>
+          <li class="step">
+            <h3 class="step__title" data-i18n="p3.title">Livraison et suivi</h3>
+            <p class="step__text" data-i18n="p3.text">On livre, vous vérifiez. Si vous le souhaitez, on continue à s'occuper de votre présence en ligne chaque mois.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="section" id="studio" aria-labelledby="studio-title">
+      <div class="section__inner studio">
+        <figure class="studio__photo">
+          <div class="studio__media">
+            <div class="studio__ph" aria-hidden="true">IGGY</div>
+            <!-- Add your photo as assets/igor.jpg (4:5, about 1200 x 1500). If the file is missing, the IGGY block stays. -->
+            <img src="assets/igor.jpg" alt="Igor Lopes Oliveira" width="1200" height="1500" loading="lazy" onerror="this.remove()">
+          </div>
+          <figcaption data-i18n="studio.caption">Igor Lopes Oliveira, fondateur</figcaption>
+        </figure>
+        <div class="studio__body">
+          <h2 class="h2" data-reveal id="studio-title" data-i18n="studio.title">Le studio</h2>
+          <p data-i18n="studio.text1">IGGY Studio est un studio créatif à Bruxelles. On aide les commerces et les indépendants à être aussi bien en ligne qu'en vrai, du profil Google au site, des photos à la vidéo.</p>
+          <p data-i18n="studio.text2">Derrière le studio, il y a Igor Lopes Oliveira, né et élevé à Bruxelles. Vous pouvez lui parler en français, en néerlandais, en anglais ou en portugais.</p>
+          <a class="btn" href="#contact" data-i18n="hero.cta">Réserver mon check gratuit</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--faq" id="faq" aria-labelledby="faq-title">
+      <div class="section__inner faq">
+        <h2 class="h2" data-reveal id="faq-title" data-i18n="faq.title">Questions fréquentes</h2>
+        <div class="faq__list">
+          <details>
+            <summary data-i18n="q1">Combien ça coûte ?</summary>
+            <p data-i18n="a1">Ça dépend de ce dont vous avez besoin. Après le check gratuit, vous recevez un devis écrit, et rien ne démarre avant votre accord.</p>
+          </details>
+          <details>
+            <summary data-i18n="q2">Que se passe-t-il pendant le check gratuit ?</summary>
+            <p data-i18n="a2">Un échange de 15 minutes. On regarde votre fiche Google, votre site et votre Instagram, et on vous dit ce qu'il vaut mieux améliorer en premier.</p>
+          </details>
+          <details>
+            <summary data-i18n="q3">Je n'ai pas de site. En ai-je vraiment besoin ?</summary>
+            <p data-i18n="a3">Pas toujours. Parfois, une fiche Google corrigée suffit pour commencer. On vous le dit franchement.</p>
+          </details>
+          <details>
+            <summary data-i18n="q4">Dans quelles langues travaillez-vous ?</summary>
+            <p data-i18n="a4">En français, en néerlandais, en anglais et en portugais.</p>
+          </details>
+          <details>
+            <summary data-i18n="q5">Pouvez-vous venir dans mon commerce ?</summary>
+            <p data-i18n="a5">Oui, à Bruxelles. On se déplace chez vous si c'est plus simple.</p>
+          </details>
+          <details>
+            <summary data-i18n="q6">Et après la livraison ?</summary>
+            <p data-i18n="a6">Vous gardez vos fichiers et vos accès. Si vous préférez ne pas vous en occuper, on propose un suivi mensuel.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--contact" id="contact" aria-labelledby="contact-title">
+      <div class="section__inner contact">
+        <div class="contact__intro">
+          <p class="hello" aria-hidden="true"><span class="hello__word">Bonjour.</span></p>
+          <h2 class="h2" data-reveal id="contact-title" data-i18n="contact.title">Réservez votre check gratuit</h2>
+          <p data-i18n="contact.text">Dites-nous qui vous êtes et ce dont vous avez besoin. On vous répond pour fixer 15 minutes.</p>
+        </div>
+
+        <!-- Set data-endpoint to the address that receives the form (for example a Formspree or Supabase function URL). -->
+        <form class="form" id="contact-form" data-endpoint="" method="post">
+          <div class="field">
+            <label for="f-name" data-i18n="f.name">Votre nom</label>
+            <input id="f-name" name="name" type="text" autocomplete="name" required>
+          </div>
+          <div class="field">
+            <label for="f-business" data-i18n="f.business">Votre commerce ou activité</label>
+            <input id="f-business" name="business" type="text" autocomplete="organization" required>
+          </div>
+          <div class="field">
+            <label for="f-contact" data-i18n="f.contact">Email ou téléphone</label>
+            <input id="f-contact" name="contact" type="text" autocomplete="email" inputmode="email" required>
+          </div>
+          <div class="field">
+            <label for="f-need" data-i18n="f.need">De quoi avez-vous besoin ?</label>
+            <select id="f-need" name="need">
+              <option value="unknown" data-i18n="f.need.unknown">Je ne sais pas encore</option>
+              <option value="content" data-i18n="f.need.content">Contenu (Google, photos, vidéo)</option>
+              <option value="identity" data-i18n="f.need.identity">Identité</option>
+              <option value="website" data-i18n="f.need.website">Site web</option>
+              <option value="automation" data-i18n="f.need.automation">Automatisation</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="f-day" data-i18n="f.day">Quand êtes-vous disponible ?</label>
+            <input id="f-day" name="availability" type="text">
+          </div>
+          <div class="field field--trap" aria-hidden="true">
+            <label for="f-site">Site</label>
+            <input id="f-site" name="company_site" type="text" tabindex="-1" autocomplete="off">
+          </div>
+          <button class="btn btn--wide" type="submit" data-i18n="f.submit">Envoyer ma demande</button>
+          <p class="form__note" data-i18n="f.privacy">On utilise vos informations uniquement pour répondre à votre demande, et on ne les partage pas.</p>
+          <p class="form__status" id="form-status" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p data-i18n="footer.where">IGGY Studio, Bruxelles</p>
+    <p>&copy; 2026 IGGY Studio</p>
+  </footer>
+
+  <script src="js/vendor/lenis.min.js"></script>
+  <script src="js/i18n.js"></script>
+  <script src="js/work.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
