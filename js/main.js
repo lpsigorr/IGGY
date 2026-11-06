@@ -107,7 +107,9 @@
       wheelMultiplier: 0.9,
       smoothWheel: true,
       syncTouch: false,
-      autoRaf: true
+      autoRaf: true,
+      /* Horizontal swipe over the work strip scrolls the strip, not the page. */
+      allowNestedScroll: true
     });
   }
 
@@ -221,6 +223,61 @@
   document.querySelectorAll(".lang button").forEach(function (btn) {
     btn.addEventListener("click", renderStrip);
   });
+
+  /* The strip rolls on its own. Hover pauses it so a horizontal swipe
+     (trackpad, or shift + wheel) can move through the pictures.
+     Two copies of the set sit side by side; the scroll position stays
+     inside the first copy so the loop has no seam. */
+  if (strip) {
+    var stripPaused = false;
+    var stripLast = 0;
+
+    function stripLoopWidth() {
+      var set = strip.querySelector(".strip__set");
+      return set ? set.offsetWidth : 0;
+    }
+
+    function wrapStrip() {
+      var half = stripLoopWidth();
+      if (half <= 0) return;
+      var x = strip.scrollLeft % half;
+      /* Stay inside (0, one set]. Jumping by one set looks the same,
+         and keeps a little room so a left swipe is not stuck at the edge. */
+      if (x <= 0) x += half;
+      if (x !== strip.scrollLeft) strip.scrollLeft = x;
+    }
+
+    strip.addEventListener("mouseenter", function () { stripPaused = true; });
+    strip.addEventListener("mouseleave", function () { stripPaused = false; });
+    strip.addEventListener("scroll", wrapStrip, { passive: true });
+    strip.addEventListener("wheel", function (e) {
+      if (!stripPaused) return;
+      if (Math.abs(e.deltaX) <= Math.abs(e.deltaY)) return;
+      e.preventDefault();
+      var delta = e.deltaX;
+      if (e.deltaMode === 1) delta *= 16;
+      else if (e.deltaMode === 2) delta *= strip.clientWidth;
+      strip.scrollLeft += delta;
+      wrapStrip();
+    }, { passive: false });
+
+    if (!reduceMotion) {
+      window.requestAnimationFrame(function roll(now) {
+        if (!stripLast) stripLast = now;
+        var dt = now - stripLast;
+        stripLast = now;
+        if (!stripPaused && !strip.hidden) {
+          var half = stripLoopWidth();
+          if (half > 0) {
+            /* Same pace as the old 50s loop across one set of pictures. */
+            strip.scrollLeft += (half / 50000) * dt;
+            wrapStrip();
+          }
+        }
+        window.requestAnimationFrame(roll);
+      });
+    }
+  }
 
   /* ---------- Contact form ---------- */
 

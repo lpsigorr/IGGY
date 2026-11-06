@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>IGGY Studio | Aussi bien en ligne qu'en vrai</title>
-  <meta name="description" content="Studio créatif à Bruxelles pour les commerces et les indépendants : fiche Google, identité, site web et automatisation. Réservez un check gratuit de 15 minutes.">
+  <title>IGGY Studio | Votre idée, entre vos mains</title>
+  <meta name="description" content="Studio créatif à Bruxelles : direction créative, identité de marque, digital, contenu et produits. Du premier croquis au résultat final.">
   <meta name="theme-color" content="#E4DFDA">
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <link rel="preload" href="assets/fonts/dm-sans-latin-opsz-normal.woff2" as="font" type="font/woff2" crossorigin>
@@ -14,6 +14,25 @@
 <body>
   <a class="skip" href="#main" data-i18n="skip">Aller au contenu</a>
 
+  <!-- Green glass shape: fixed to the screen, drifts and changes shape slowly behind the page. -->
+  <div class="ambient" aria-hidden="true">
+    <svg class="ambient__blob" viewBox="0 0 1000 1000" focusable="false">
+      <defs>
+        <radialGradient id="blob-fill" cx="50%" cy="55%" r="50%">
+          <stop offset="0" stop-color="#0C7C59" stop-opacity="0.22"/>
+          <stop offset="0.55" stop-color="#0C7C59" stop-opacity="0.13"/>
+          <stop offset="1" stop-color="#0C7C59" stop-opacity="0.05"/>
+        </radialGradient>
+        <radialGradient id="blob-light" cx="34%" cy="30%" r="38%">
+          <stop offset="0" stop-color="#FFFFFF" stop-opacity="0.3"/>
+          <stop offset="1" stop-color="#FFFFFF" stop-opacity="0"/>
+        </radialGradient>
+      </defs>
+      <path id="blob-path" fill="url(#blob-fill)" d="M830 500 A330 330 0 1 1 170 500 A330 330 0 1 1 830 500Z"/>
+      <path id="blob-shine" fill="url(#blob-light)" d="M830 500 A330 330 0 1 1 170 500 A330 330 0 1 1 830 500Z"/>
+    </svg>
+  </div>
+
   <header class="nav" id="nav">
     <a class="nav__logo" href="#top" aria-label="IGGY Studio">IGGY<span> Studio</span></a>
 
@@ -22,7 +41,7 @@
       <a href="#work" data-i18n="nav.work">Réalisations</a>
       <a href="#studio" data-i18n="nav.studio">Studio</a>
       <a href="#faq" data-i18n="nav.faq">Questions</a>
-      <a class="btn btn--small nav__cta-mobile" href="#contact" data-i18n="nav.cta">Check gratuit</a>
+      <a class="btn btn--small nav__cta-mobile" href="#contact" data-i18n="nav.cta">Démarrer un projet</a>
     </nav>
 
     <div class="nav__tools">
@@ -31,7 +50,7 @@
         <button type="button" data-lang="nl" aria-pressed="false">NL</button>
         <button type="button" data-lang="en" aria-pressed="false">EN</button>
       </div>
-      <a class="btn btn--small nav__cta" href="#contact" data-i18n="nav.cta">Check gratuit</a>
+      <a class="btn btn--small nav__cta" href="#contact" data-i18n="nav.cta">Démarrer un projet</a>
       <button class="nav__menu" type="button" aria-expanded="false" aria-controls="nav-links" data-i18n="nav.menu">Menu</button>
     </div>
   </header>
@@ -44,86 +63,136 @@
           srcset="assets/hero-900.webp 900w, assets/hero.webp 1536w"
           sizes="(max-width: 899px) 140vw, 66vw"
           width="1536" height="1024"
-          alt="Silhouette d'une personne dessinée avec des fils entrelacés"
+          alt="Silhouette d&#x27;une personne dessinée avec des fils entrelacés"
           data-i18n-alt="hero.alt"
           fetchpriority="high">
       </figure>
 
-      <h1 class="hero__title" data-i18n-html="hero.title"><span class="line">Aussi bien en ligne</span> <span class="line">qu'en vrai.</span></h1>
+      <h1 class="hero__title" data-i18n-html="hero.title"><span class="line">Votre idée,</span> <span class="line">entre vos mains.</span></h1>
 
       <div class="hero__foot">
-        <p class="hero__lead" data-i18n="hero.lead">IGGY Studio répare, construit et soigne la présence en ligne des commerces et des indépendants de Bruxelles.</p>
-        <a class="btn" href="#contact" data-i18n="hero.cta">Réserver mon check gratuit</a>
+        <p class="hero__lead" data-i18n="hero.lead">IGGY Studio est un studio créatif à Bruxelles. Nous transformons vos idées en choses réelles, du premier croquis au résultat final.</p>
+        <a class="btn" href="#contact" data-i18n="hero.cta">Démarrer un projet</a>
       </div>
     </section>
 
     <section class="section" id="services" aria-labelledby="services-title">
       <div class="section__inner">
-        <h2 class="h2" data-reveal id="services-title" data-i18n="services.title">Ce qu'on fait</h2>
+        <h2 class="h2" data-reveal id="services-title" data-i18n="services.title">Ce que nous faisons</h2>
         <div class="svc" id="svc">
           <div class="svc__item is-active">
             <h3 class="svc__head">
-              <button class="svc__tab" type="button" id="svc-tab-1" aria-expanded="true" aria-controls="svc-panel-1" data-i18n="s1.what"></button>
+              <button class="svc__tab" type="button" id="svc-tab-1" aria-expanded="true" aria-controls="svc-panel-1" data-i18n="s1.what">Direction créative</button>
             </h3>
             <div class="svc__panel" id="svc-panel-1" role="region" aria-labelledby="svc-tab-1">
-              <p class="svc__why" data-i18n="s1.why"></p>
-              <p class="svc__text" data-i18n="s1.text"></p>
+              <p class="svc__why" data-i18n="s1.why">Une idée claire, une histoire forte.</p>
+              <p class="svc__text" data-i18n="s1.text">Nous donnons forme à l'idée : le concept, l'ambiance et l'histoire, pour que tout ce que vous faites raconte la même chose.</p>
               <ul class="svc__tags">
-                <li data-i18n="s1.tag1"></li>
-                <li data-i18n="s1.tag2"></li>
-                <li data-i18n="s1.tag3"></li>
+                <li data-i18n="s1.tag1">Concept</li>
+                <li data-i18n="s1.tag2">Direction artistique</li>
+                <li data-i18n="s1.tag3">Campagnes</li>
               </ul>
             </div>
           </div>
           <div class="svc__item">
             <h3 class="svc__head">
-              <button class="svc__tab" type="button" id="svc-tab-2" aria-expanded="false" aria-controls="svc-panel-2" data-i18n="s2.what"></button>
+              <button class="svc__tab" type="button" id="svc-tab-2" aria-expanded="false" aria-controls="svc-panel-2" data-i18n="s2.what">Identité de marque</button>
             </h3>
             <div class="svc__panel" id="svc-panel-2" role="region" aria-labelledby="svc-tab-2" hidden>
-              <p class="svc__why" data-i18n="s2.why"></p>
-              <p class="svc__text" data-i18n="s2.text"></p>
+              <p class="svc__why" data-i18n="s2.why">Une marque qu'on reconnaît.</p>
+              <p class="svc__text" data-i18n="s2.text">Logo, couleurs, typographie et ton, pensés ensemble et utilisés partout de la même façon.</p>
               <ul class="svc__tags">
-                <li data-i18n="s2.tag1"></li>
-                <li data-i18n="s2.tag2"></li>
-                <li data-i18n="s2.tag3"></li>
+                <li data-i18n="s2.tag1">Logo et identité</li>
+                <li data-i18n="s2.tag2">Packaging</li>
+                <li data-i18n="s2.tag3">Guide de marque</li>
               </ul>
             </div>
           </div>
           <div class="svc__item">
             <h3 class="svc__head">
-              <button class="svc__tab" type="button" id="svc-tab-3" aria-expanded="false" aria-controls="svc-panel-3" data-i18n="s3.what"></button>
+              <button class="svc__tab" type="button" id="svc-tab-3" aria-expanded="false" aria-controls="svc-panel-3" data-i18n="s3.what">Digital</button>
             </h3>
             <div class="svc__panel" id="svc-panel-3" role="region" aria-labelledby="svc-tab-3" hidden>
-              <p class="svc__why" data-i18n="s3.why"></p>
-              <p class="svc__text" data-i18n="s3.text"></p>
+              <p class="svc__why" data-i18n="s3.why">Pensé pour chaque écran.</p>
+              <p class="svc__text" data-i18n="s3.text">Sites web, applications web et petits outils qui marchent sur chaque écran et vous font gagner du temps.</p>
               <ul class="svc__tags">
-                <li data-i18n="s3.tag1"></li>
-                <li data-i18n="s3.tag2"></li>
-                <li data-i18n="s3.tag3"></li>
+                <li data-i18n="s3.tag1">Sites web</li>
+                <li data-i18n="s3.tag2">Apps de campagne</li>
+                <li data-i18n="s3.tag3">Automatisations</li>
               </ul>
             </div>
           </div>
           <div class="svc__item">
             <h3 class="svc__head">
-              <button class="svc__tab" type="button" id="svc-tab-4" aria-expanded="false" aria-controls="svc-panel-4" data-i18n="s4.what"></button>
+              <button class="svc__tab" type="button" id="svc-tab-4" aria-expanded="false" aria-controls="svc-panel-4" data-i18n="s4.what">Contenu et motion</button>
             </h3>
             <div class="svc__panel" id="svc-panel-4" role="region" aria-labelledby="svc-tab-4" hidden>
-              <p class="svc__why" data-i18n="s4.why"></p>
-              <p class="svc__text" data-i18n="s4.text"></p>
+              <p class="svc__why" data-i18n="s4.why">Votre travail, sous son meilleur jour.</p>
+              <p class="svc__text" data-i18n="s4.text">Photos, vidéos et animations qui montrent ce que vous faites, pour votre site, vos réseaux et vos campagnes.</p>
               <ul class="svc__tags">
-                <li data-i18n="s4.tag1"></li>
-                <li data-i18n="s4.tag2"></li>
-                <li data-i18n="s4.tag3"></li>
+                <li data-i18n="s4.tag1">Photo</li>
+                <li data-i18n="s4.tag2">Vidéo</li>
+                <li data-i18n="s4.tag3">Motion design</li>
+              </ul>
+            </div>
+          </div>
+          <div class="svc__item">
+            <h3 class="svc__head">
+              <button class="svc__tab" type="button" id="svc-tab-5" aria-expanded="false" aria-controls="svc-panel-5" data-i18n="s5.what">Produits et expériences</button>
+            </h3>
+            <div class="svc__panel" id="svc-panel-5" role="region" aria-labelledby="svc-tab-5" hidden>
+              <p class="svc__why" data-i18n="s5.why">Des idées qu'on peut toucher.</p>
+              <p class="svc__text" data-i18n="s5.text">Des objets et des moments réels : prototypes, merch, événements et installations interactives.</p>
+              <ul class="svc__tags">
+                <li data-i18n="s5.tag1">Prototypes</li>
+                <li data-i18n="s5.tag2">Merch</li>
+                <li data-i18n="s5.tag3">Événements et installations</li>
               </ul>
             </div>
           </div>
         </div>
+        <p class="svc__more" data-i18n="services.more">Vous ne savez pas où se place votre projet ? Racontez-nous l'idée, nous vous dirons comment nous pouvons aider.</p>
       </div>
     </section>
 
     <section class="section section--work" id="work" aria-labelledby="work-title">
       <div class="section__inner">
         <h2 class="h2" data-reveal id="work-title" data-i18n="work.title">Réalisations</h2>
+        <div class="stories">
+          <article class="story">
+            <div class="story__frame"><img src="assets/work/star_main.webp" alt="STAR" width="960" height="720" loading="lazy"></div>
+            <div class="story__body">
+              <h3 class="story__name">STAR</h3>
+              <p class="story__where" data-i18n="star.where">Collection streetwear, Tokyo. Avec et pour YF Agency.</p>
+              <dl class="story__facts">
+                <div><dt data-i18n="case.idea">L'idée</dt><dd data-i18n="star.idea">Des croquis dans un carnet, transformés en collection.</dd></div>
+                <div><dt data-i18n="case.made">Ce que nous avons fait</dt><dd data-i18n="star.made">La doctrine de la collection, un alphabet dessiné à la main devenu police, les logos, des mockups 2D et 3D, et un film de marque tourné à Tokyo.</dd></div>
+                <div><dt data-i18n="case.result">Le résultat</dt><dd data-i18n="star.result">Une collection complète, du croquis au film.</dd></div>
+              </dl>
+              <ul class="story__tags">
+                <li data-i18n="s1.what">Direction créative</li>
+                <li data-i18n="s2.what">Identité de marque</li>
+                <li data-i18n="s4.what">Contenu et motion</li>
+              </ul>
+            </div>
+          </article>
+          <article class="story">
+            <div class="story__frame"><img src="assets/work/sparx_cover.webp" alt="SPARX" width="960" height="720" loading="lazy"></div>
+            <div class="story__body">
+              <h3 class="story__name">SPARX</h3>
+              <p class="story__where" data-i18n="sparx.where">Sac de frappe intelligent. Projet personnel.</p>
+              <dl class="story__facts">
+                <div><dt data-i18n="case.idea">L'idée</dt><dd data-i18n="sparx.idea">Aider les boxeurs sans coach à s'entraîner et à progresser.</dd></div>
+                <div><dt data-i18n="case.made">Ce que nous avons fait</dt><dd data-i18n="sparx.made">Des capteurs de pression dans le sac, une carte ESP32 et une première interface pour suivre chaque coup.</dd></div>
+                <div><dt data-i18n="case.result">Le résultat</dt><dd data-i18n="sparx.result">Un prototype qui fonctionne.</dd></div>
+              </dl>
+              <ul class="story__tags">
+                <li data-i18n="s5.what">Produits et expériences</li>
+                <li data-i18n="s3.what">Digital</li>
+              </ul>
+            </div>
+          </article>
+        </div>
         <div class="work">
           <article class="case">
             <div>
@@ -132,14 +201,19 @@
             </div>
             <div>
               <p class="case__text" data-i18n="work.case.text">Site en français et néerlandais, Google Ads et suivi des visites pour une nouvelle société de toiture.</p>
-              <p class="case__result" data-i18n="work.case.result">Plus de visiteurs et un premier appel.</p>
+              <ul class="case__stats">
+                <li><span class="case__num" data-i18n="work.case.s1.num">65</span> <span class="case__label" data-i18n="work.case.s1.label">clics depuis Google Ads en 7 jours</span></li>
+                <li><span class="case__num" data-i18n="work.case.s2.num">×3</span> <span class="case__label" data-i18n="work.case.s2.label">par rapport à la semaine précédente</span></li>
+                <li><span class="case__num" data-i18n="work.case.s3.num">1&nbsp;186</span> <span class="case__label" data-i18n="work.case.s3.label">affichages dans Google</span></li>
+              </ul>
+              <p class="case__period" data-i18n="work.case.period">Du 30 octobre au 5 novembre 2026.</p>
             </div>
           </article>
           <aside class="next">
-            <h3 class="next__title" data-i18n="work.next.title">Votre commerce pourrait être le prochain cas.</h3>
+            <h3 class="next__title" data-i18n="work.next.title">Votre idée pourrait être la prochaine.</h3>
             <div>
-              <p class="next__text" data-i18n="work.next.text">Racontez-nous ce dont vous avez besoin.</p>
-              <a class="btn btn--ink" href="#contact" data-i18n="work.next.cta">Parlons-en</a>
+              <p class="next__text" data-i18n="work.next.text">Racontez-la-nous, même en quelques lignes.</p>
+              <a class="btn btn--ink" href="#contact" data-i18n="work.next.cta">Démarrer un projet</a>
             </div>
           </aside>
         </div>
@@ -154,16 +228,20 @@
         <h2 class="h2" data-reveal id="process-title" data-i18n="process.title">Comment ça se passe</h2>
         <ol class="steps">
           <li class="step">
-            <h3 class="step__title" data-i18n="p1.title">Check gratuit de 15 minutes</h3>
-            <p class="step__text" data-i18n="p1.text">On regarde votre fiche Google, votre site et votre Instagram, et on vous montre 3 choses à corriger.</p>
+            <h3 class="step__title" data-i18n="p1.title">Racontez-nous votre idée</h3>
+            <p class="step__text" data-i18n="p1.text">Écrivez-nous, même si ce n'est encore qu'une idée en vrac.</p>
           </li>
           <li class="step">
-            <h3 class="step__title" data-i18n="p2.title">Devis et date de livraison</h3>
-            <p class="step__text" data-i18n="p2.text">On se met d'accord sur ce qui sera fait, le prix et la date de livraison. Rien ne démarre avant votre accord.</p>
+            <h3 class="step__title" data-i18n="p2.title">Nous en parlons</h3>
+            <p class="step__text" data-i18n="p2.text">Un appel ou un rendez-vous, en français, néerlandais, anglais ou portugais. Nous posons des questions et vous donnons un avis franc.</p>
           </li>
           <li class="step">
-            <h3 class="step__title" data-i18n="p3.title">Livraison et suivi</h3>
-            <p class="step__text" data-i18n="p3.text">On livre, vous vérifiez. Si vous le souhaitez, on continue à s'occuper de votre présence en ligne chaque mois.</p>
+            <h3 class="step__title" data-i18n="p3.title">Nous nous mettons d'accord</h3>
+            <p class="step__text" data-i18n="p3.text">Une proposition écrite : ce que nous faisons, le prix, la date de début et la date de livraison. Rien ne démarre sans votre accord.</p>
+          </li>
+          <li class="step">
+            <h3 class="step__title" data-i18n="p4.title">Du croquis au résultat final</h3>
+            <p class="step__text" data-i18n="p4.text">Vous suivez chaque étape, et vous recevez tous les fichiers finaux.</p>
           </li>
         </ol>
       </div>
@@ -173,17 +251,15 @@
       <div class="section__inner studio">
         <figure class="studio__photo">
           <div class="studio__media">
-            <div class="studio__ph" aria-hidden="true">IGGY</div>
-            <!-- Add your photo as assets/igor.jpg (4:5, about 1200 x 1500). If the file is missing, the IGGY block stays. -->
-            <img src="assets/igor.jpg" alt="Igor Lopes Oliveira" width="1200" height="1500" loading="lazy" onerror="this.remove()">
+            <img src="assets/igor-studio.webp" alt="Igor Lopes Oliveira" width="1200" height="1500" loading="lazy">
           </div>
           <figcaption data-i18n="studio.caption">Igor Lopes Oliveira, fondateur</figcaption>
         </figure>
         <div class="studio__body">
           <h2 class="h2" data-reveal id="studio-title" data-i18n="studio.title">Le studio</h2>
-          <p data-i18n="studio.text1">IGGY Studio est un studio créatif à Bruxelles. On aide les commerces et les indépendants à être aussi bien en ligne qu'en vrai, du profil Google au site, des photos à la vidéo.</p>
-          <p data-i18n="studio.text2">Derrière le studio, il y a Igor Lopes Oliveira, né et élevé à Bruxelles. Vous pouvez lui parler en français, en néerlandais, en anglais ou en portugais.</p>
-          <a class="btn" href="#contact" data-i18n="hero.cta">Réserver mon check gratuit</a>
+          <p data-i18n="studio.text1">IGGY Studio existe pour une raison simple : une idée ne prend de la valeur qu'une fois qu'elle existe. Nous travaillons main dans la main avec les personnes qui la portent, du premier croquis au produit fini, et nous la voyons grandir étape par étape. Nous aimons notre métier, et cela doit se voir dans chaque détail.</p>
+          <p data-i18n="studio.text2">Derrière le studio, il y a Igor Lopes Oliveira, creative technologist, né et élevé à Bruxelles. Design, code, vidéo, motion et prototypage dans les mêmes mains : rien ne se perd entre l'idée et le résultat.</p>
+          <a class="btn" href="#contact" data-i18n="hero.cta">Démarrer un projet</a>
         </div>
       </div>
     </section>
@@ -193,28 +269,36 @@
         <h2 class="h2" data-reveal id="faq-title" data-i18n="faq.title">Questions fréquentes</h2>
         <div class="faq__list">
           <details>
-            <summary data-i18n="q1">Combien ça coûte ?</summary>
-            <p data-i18n="a1">Ça dépend de ce dont vous avez besoin. Après le check gratuit, vous recevez un devis écrit, et rien ne démarre avant votre accord.</p>
+            <summary data-i18n="q1">Quels projets acceptez-vous ?</summary>
+            <p data-i18n="a1">Des petits et des grands : un logo, un site web ou le lancement complet d'une marque. Ce qui compte, c'est l'idée.</p>
           </details>
           <details>
-            <summary data-i18n="q2">Que se passe-t-il pendant le check gratuit ?</summary>
-            <p data-i18n="a2">Un échange de 15 minutes. On regarde votre fiche Google, votre site et votre Instagram, et on vous dit ce qu'il vaut mieux améliorer en premier.</p>
+            <summary data-i18n="q2">Qui travaille sur mon projet ?</summary>
+            <p data-i18n="a2">Igor, le fondateur, directement : de la première idée au fichier final. Si un projet demande une compétence que le studio n'a pas, nous vous le disons avant de commencer.</p>
           </details>
           <details>
-            <summary data-i18n="q3">Je n'ai pas de site. En ai-je vraiment besoin ?</summary>
-            <p data-i18n="a3">Pas toujours. Parfois, une fiche Google corrigée suffit pour commencer. On vous le dit franchement.</p>
+            <summary data-i18n="q3">Combien ça coûte ?</summary>
+            <p data-i18n="a3">Chaque projet reçoit un prix écrit après le premier échange. Si votre budget est petit, nous vous disons franchement ce qui est possible avec.</p>
           </details>
           <details>
-            <summary data-i18n="q4">Dans quelles langues travaillez-vous ?</summary>
-            <p data-i18n="a4">En français, en néerlandais, en anglais et en portugais.</p>
+            <summary data-i18n="q4">Combien de temps ça prend ?</summary>
+            <p data-i18n="a4">Ça dépend du projet. La date de livraison est fixée avant de commencer.</p>
           </details>
           <details>
-            <summary data-i18n="q5">Pouvez-vous venir dans mon commerce ?</summary>
-            <p data-i18n="a5">Oui, à Bruxelles. On se déplace chez vous si c'est plus simple.</p>
+            <summary data-i18n="q5">Et si je veux des modifications ?</summary>
+            <p data-i18n="a5">Le nombre de tours de modifications est écrit dans la proposition, pour que tout soit clair dès le départ.</p>
           </details>
           <details>
-            <summary data-i18n="q6">Et après la livraison ?</summary>
-            <p data-i18n="a6">Vous gardez vos fichiers et vos accès. Si vous préférez ne pas vous en occuper, on propose un suivi mensuel.</p>
+            <summary data-i18n="q6">À qui appartient le résultat ?</summary>
+            <p data-i18n="a6">À vous : tous les fichiers finaux et le droit de les utiliser, une fois le projet payé.</p>
+          </details>
+          <details>
+            <summary data-i18n="q7">Dans quelles langues travaillez-vous ?</summary>
+            <p data-i18n="a7">En français, en néerlandais, en anglais et en portugais.</p>
+          </details>
+          <details>
+            <summary data-i18n="q8">Seulement à Bruxelles ?</summary>
+            <p data-i18n="a8">Le studio est à Bruxelles, mais nous travaillons partout, en personne ou à distance.</p>
           </details>
         </div>
       </div>
@@ -224,8 +308,8 @@
       <div class="section__inner contact">
         <div class="contact__intro">
           <p class="hello" aria-hidden="true"><span class="hello__word">Bonjour.</span></p>
-          <h2 class="h2" data-reveal id="contact-title" data-i18n="contact.title">Réservez votre check gratuit</h2>
-          <p data-i18n="contact.text">Dites-nous qui vous êtes et ce dont vous avez besoin. On vous répond pour fixer 15 minutes.</p>
+          <h2 class="h2" data-reveal id="contact-title" data-i18n="contact.title">Parlons de votre idée</h2>
+          <p data-i18n="contact.text">Quelques lignes suffisent. Nous vous répondons pour en parler.</p>
         </div>
 
         <!-- Set data-endpoint to the address that receives the form (for example a Formspree or Supabase function URL). -->
@@ -235,33 +319,34 @@
             <input id="f-name" name="name" type="text" autocomplete="name" required>
           </div>
           <div class="field">
-            <label for="f-business" data-i18n="f.business">Votre commerce ou activité</label>
-            <input id="f-business" name="business" type="text" autocomplete="organization" required>
-          </div>
-          <div class="field">
             <label for="f-contact" data-i18n="f.contact">Email ou téléphone</label>
             <input id="f-contact" name="contact" type="text" autocomplete="email" inputmode="email" required>
           </div>
           <div class="field">
-            <label for="f-need" data-i18n="f.need">De quoi avez-vous besoin ?</label>
+            <label for="f-business" data-i18n="f.business">Votre entreprise ou marque (facultatif)</label>
+            <input id="f-business" name="business" type="text" autocomplete="organization">
+          </div>
+          <div class="field">
+            <label for="f-need" data-i18n="f.need">De quoi s'agit-il ?</label>
             <select id="f-need" name="need">
               <option value="unknown" data-i18n="f.need.unknown">Je ne sais pas encore</option>
-              <option value="content" data-i18n="f.need.content">Contenu (Google, photos, vidéo)</option>
-              <option value="identity" data-i18n="f.need.identity">Identité</option>
-              <option value="website" data-i18n="f.need.website">Site web</option>
-              <option value="automation" data-i18n="f.need.automation">Automatisation</option>
+              <option value="direction" data-i18n="f.need.direction">Direction créative</option>
+              <option value="identity" data-i18n="f.need.identity">Identité de marque</option>
+              <option value="digital" data-i18n="f.need.digital">Digital</option>
+              <option value="content" data-i18n="f.need.content">Contenu et motion</option>
+              <option value="product" data-i18n="f.need.product">Produits et expériences</option>
             </select>
           </div>
           <div class="field">
-            <label for="f-day" data-i18n="f.day">Quand êtes-vous disponible ?</label>
-            <input id="f-day" name="availability" type="text">
+            <label for="f-idea" data-i18n="f.idea">Racontez-nous votre idée</label>
+            <textarea id="f-idea" name="idea" rows="5" required></textarea>
           </div>
           <div class="field field--trap" aria-hidden="true">
             <label for="f-site">Site</label>
             <input id="f-site" name="company_site" type="text" tabindex="-1" autocomplete="off">
           </div>
-          <button class="btn btn--wide" type="submit" data-i18n="f.submit">Envoyer ma demande</button>
-          <p class="form__note" data-i18n="f.privacy">On utilise vos informations uniquement pour répondre à votre demande, et on ne les partage pas.</p>
+          <button class="btn btn--wide" type="submit" data-i18n="f.submit">Envoyer mon idée</button>
+          <p class="form__note" data-i18n="f.privacy">Nous utilisons vos informations uniquement pour vous répondre, et nous ne les partageons pas.</p>
           <p class="form__status" id="form-status" role="status" aria-live="polite"></p>
         </form>
       </div>
@@ -277,5 +362,6 @@
   <script src="js/i18n.js"></script>
   <script src="js/work.js"></script>
   <script src="js/main.js"></script>
+  <script src="js/blob.js"></script>
 </body>
 </html>
