@@ -14,23 +14,11 @@
 <body>
   <a class="skip" href="#main" data-i18n="skip">Aller au contenu</a>
 
-  <!-- Green glass shape: fixed to the screen, drifts and changes shape slowly behind the page. -->
-  <div class="ambient" aria-hidden="true">
-    <svg class="ambient__blob" viewBox="0 0 1000 1000" focusable="false">
-      <defs>
-        <radialGradient id="blob-fill" cx="50%" cy="55%" r="50%">
-          <stop offset="0" stop-color="#0C7C59" stop-opacity="0.22"/>
-          <stop offset="0.55" stop-color="#0C7C59" stop-opacity="0.13"/>
-          <stop offset="1" stop-color="#0C7C59" stop-opacity="0.05"/>
-        </radialGradient>
-        <radialGradient id="blob-light" cx="34%" cy="30%" r="38%">
-          <stop offset="0" stop-color="#FFFFFF" stop-opacity="0.3"/>
-          <stop offset="1" stop-color="#FFFFFF" stop-opacity="0"/>
-        </radialGradient>
-      </defs>
-      <path id="blob-path" fill="url(#blob-fill)" d="M830 500 A330 330 0 1 1 170 500 A330 330 0 1 1 830 500Z"/>
-      <path id="blob-shine" fill="url(#blob-light)" d="M830 500 A330 330 0 1 1 170 500 A330 330 0 1 1 830 500Z"/>
-    </svg>
+  <!-- Green glass shape: fixed to the screen, drifts and changes shape slowly behind the page (drawn by js/blob.js).
+       Switch: "hidden" below turns it off. Remove the word hidden to turn it back on. -->
+  <div class="ambient" aria-hidden="true" hidden>
+    <canvas class="ambient__canvas" id="blob"></canvas>
+    <span class="ambient__blob"></span>
   </div>
 
   <header class="nav" id="nav">
@@ -160,7 +148,7 @@
         <h2 class="h2" data-reveal id="work-title" data-i18n="work.title">Réalisations</h2>
         <div class="stories">
           <article class="story">
-            <div class="story__frame"><img src="assets/work/star_main.webp" alt="STAR" width="960" height="720" loading="lazy"></div>
+            <a class="story__frame" href="star.html" tabindex="-1" aria-hidden="true"><img decoding="async" src="assets/work/star_main.webp" alt="" width="960" height="720" loading="lazy"></a>
             <div class="story__body">
               <h3 class="story__name">STAR</h3>
               <p class="story__where" data-i18n="star.where">Collection streetwear, Tokyo. Avec et pour YF Agency.</p>
@@ -174,10 +162,11 @@
                 <li data-i18n="s2.what">Identité de marque</li>
                 <li data-i18n="s4.what">Contenu et motion</li>
               </ul>
+              <a class="btn btn--small story__link" href="star.html" data-i18n="star.link">Voir le projet</a>
             </div>
           </article>
           <article class="story">
-            <div class="story__frame"><img src="assets/work/sparx_cover.webp" alt="SPARX" width="960" height="720" loading="lazy"></div>
+            <div class="story__frame"><img decoding="async" src="assets/work/sparx_cover.webp" alt="SPARX" width="960" height="720" loading="lazy"></div>
             <div class="story__body">
               <h3 class="story__name">SPARX</h3>
               <p class="story__where" data-i18n="sparx.where">Sac de frappe intelligent. Projet personnel.</p>
@@ -251,7 +240,7 @@
       <div class="section__inner studio">
         <figure class="studio__photo">
           <div class="studio__media">
-            <img src="assets/igor-studio.webp" alt="Igor Lopes Oliveira" width="1200" height="1500" loading="lazy">
+            <img decoding="async" src="assets/igor-studio.webp" alt="Igor Lopes Oliveira" width="1200" height="1500" loading="lazy">
           </div>
           <figcaption data-i18n="studio.caption">Igor Lopes Oliveira, fondateur</figcaption>
         </figure>
@@ -360,6 +349,7 @@
 
   <script src="js/vendor/lenis.min.js"></script>
   <script src="js/i18n.js"></script>
+  <script src="js/i18n-star.js"></script>
   <script src="js/work.js"></script>
   <script src="js/main.js"></script>
   <script src="js/blob.js"></script>

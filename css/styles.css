@@ -96,7 +96,7 @@ img { max-width: 100%; }
 
 /* ---------- Ambient green glass shape ----------
    Fixed to the screen: the page scrolls over it while it drifts and changes shape.
-   The outline is redrawn by js/blob.js; CSS only moves and turns it. The tint stays at most about 22% green in the
+   Shape, drift and turn are drawn by js/blob.js on one light canvas. The tint stays at most about 22% green in the
    middle, so every text keeps its contrast. */
 
 .ambient {
@@ -107,22 +107,19 @@ img { max-width: 100%; }
   pointer-events: none;
 }
 
+/* Sets the size of the shape only: js/blob.js reads this width and draws the
+   shape, its drift and its turn on the canvas below. */
 .ambient__blob {
   position: absolute;
-  top: 50%;
-  left: 50%;
   width: min(60vw, 820px);
-  aspect-ratio: 1;
-  overflow: visible;
-  animation: blob-drift 48s ease-in-out infinite alternate;
-  will-change: transform;
+  visibility: hidden;
 }
 
-@keyframes blob-drift {
-  0%   { transform: translate(-15%, -70%) rotate(0deg) scale(1); }
-  35%  { transform: translate(-60%, -35%) rotate(70deg) scale(1.08); }
-  70%  { transform: translate(-30%, -15%) rotate(150deg) scale(0.94); }
-  100% { transform: translate(-75%, -55%) rotate(220deg) scale(1.04); }
+.ambient__canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
 }
 
 @media (max-width: 799px) {
@@ -140,8 +137,6 @@ img { max-width: 100%; }
   border: 1px solid rgba(255, 255, 255, 0.28);
   border-radius: 999px;
   background: var(--glass-green);
-  -webkit-backdrop-filter: blur(14px) saturate(160%);
-  backdrop-filter: blur(14px) saturate(160%);
   box-shadow:
     inset 0 1px 0 rgba(255, 255, 255, 0.32),
     0 10px 24px -14px rgba(10, 102, 72, 0.7);
@@ -262,8 +257,6 @@ img { max-width: 100%; }
   border: 1px solid var(--glass-edge);
   border-radius: 999px;
   background: var(--glass-light);
-  -webkit-backdrop-filter: blur(12px);
-  backdrop-filter: blur(12px);
   color: var(--ink);
   font-family: var(--display);
   font-size: 0.9375rem;
@@ -582,6 +575,7 @@ img { max-width: 100%; }
 }
 .story { margin: 0; }
 .story__frame {
+  isolation: isolate;
   aspect-ratio: 4 / 3;
   overflow: hidden;
   background: var(--grey);
@@ -629,6 +623,8 @@ img { max-width: 100%; }
   padding: 0;
   list-style: none;
 }
+.story__frame { display: block; }
+.story__link { margin-top: 1.5rem; }
 .story__tags li {
   padding: 0.35rem 0.85rem;
   border: 1px solid var(--line);
@@ -757,6 +753,7 @@ img { max-width: 100%; }
    tinted to the Dust Grey of the page, so the set reads as one series.
    Colour comes back on hover. */
 .shot__frame {
+  isolation: isolate;
   width: clamp(16rem, 26vw, 24rem);
   aspect-ratio: 4 / 3;
   overflow: hidden;
@@ -838,6 +835,7 @@ img { max-width: 100%; }
 .studio__photo { margin: 0; }
 
 .studio__media {
+  isolation: isolate;
   position: relative;
   aspect-ratio: 4 / 5;
   overflow: hidden;

@@ -42,9 +42,10 @@
       el.setAttribute("aria-label", t(el.getAttribute("data-i18n-aria")));
     });
 
-    document.title = t("meta.title");
+    /* A page can name its own title and description keys (star.html does). */
+    document.title = t(document.body.getAttribute("data-title") || "meta.title");
     var desc = document.querySelector('meta[name="description"]');
-    if (desc) desc.setAttribute("content", t("meta.desc"));
+    if (desc) desc.setAttribute("content", t(document.body.getAttribute("data-desc") || "meta.desc"));
 
     document.querySelectorAll(".lang button").forEach(function (btn) {
       btn.setAttribute("aria-pressed", btn.getAttribute("data-lang") === lang ? "true" : "false");
@@ -261,12 +262,16 @@
       wrapStrip();
     }, { passive: false });
 
+    /* The strip also waits while the page scrolls, so scrolling stays smooth. */
+    var pageScrolledAt = -1000;
+    window.addEventListener("scroll", function () { pageScrolledAt = performance.now(); }, { passive: true });
+
     if (!reduceMotion) {
       window.requestAnimationFrame(function roll(now) {
         if (!stripLast) stripLast = now;
         var dt = now - stripLast;
         stripLast = now;
-        if (!stripPaused && !strip.hidden) {
+        if (!stripPaused && !strip.hidden && now - pageScrolledAt > 250) {
           var half = stripLoopWidth();
           if (half > 0) {
             /* Same pace as the old 50s loop across one set of pictures. */
@@ -281,7 +286,15 @@
 
   /* ---------- Contact form ---------- */
 
+  /* Case study pages: the opening film stays still when reduced motion is asked. */
+  var heroFilm = document.querySelector(".cs-hero__film");
+  if (heroFilm && reduceMotion) {
+    heroFilm.removeAttribute("autoplay");
+    heroFilm.pause();
+  }
+
   var form = document.getElementById("contact-form");
+  if (!form) return;
   var statusEl = document.getElementById("form-status");
   var submitBtn = form.querySelector('button[type="submit"]');
 
