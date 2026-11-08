@@ -1,0 +1,328 @@
+/* Case pages, v2.
+   Show, don't tell: the pictures carry the story, the words are captions.
+   One wide frame for everything (nav, text and pictures share the same edges),
+   one gutter, square corners, no dividing lines. Space does the separating.
+   The opening picture stays put while the page slides over it.
+   Each project sets its own world in its own file (css/sparx.css, css/star.css). */
+
+@font-face {
+  font-family: "STAR";
+  src: url("../assets/fonts/star-alphabet.woff2") format("woff2");
+  font-display: swap;
+}
+
+.cs {
+  --side: clamp(0.75rem, 1.6vw, 1.5rem);   /* page edge */
+  --gut: clamp(0.5rem, 0.7vw, 0.75rem);    /* gap between pictures */
+  --brand-black: #1A1B1B;
+  --brand-red: #DE1F26;
+  --brand-white: #F1F2F2;
+  --brand-font: var(--display);
+}
+
+/* Nav and footer line up with the pictures on case pages. */
+.cs .nav { padding-left: var(--side); padding-right: var(--side); }
+.cs .footer { padding-left: var(--side); padding-right: var(--side); border-top: 0; }
+
+/* ---------- Opening: full screen, stays behind as the page slides over ---------- */
+
+.cs-hero {
+  position: sticky;
+  top: 0;
+  z-index: 0;
+  height: 100vh;
+  height: 100svh;
+  overflow: hidden;
+  background: var(--brand-black);
+}
+.cs-hero__film {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.cs-hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(10, 11, 13, 0.55), rgba(10, 11, 13, 0) 35%);
+  pointer-events: none;
+}
+.cs-hero__name {
+  position: absolute;
+  left: var(--side);
+  bottom: calc(var(--side) + 2.25rem);
+  z-index: 1;
+  margin: 0;
+  color: var(--brand-white);
+  font-family: var(--brand-font);
+  font-size: clamp(4.5rem, 16vw, 15rem);
+  font-weight: 400;
+  line-height: 0.82;
+  letter-spacing: -0.02em;
+}
+.cs-hero__tag {
+  position: absolute;
+  left: var(--side);
+  right: var(--side);
+  bottom: var(--side);
+  z-index: 1;
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  margin: 0;
+  color: rgba(241, 242, 242, 0.85);
+  font-family: var(--display);
+  font-size: 0.875rem;
+}
+
+/* Everything after the opening: the curtain that slides over it. */
+.cs-body {
+  position: relative;
+  z-index: 1;
+  background: var(--grey);
+}
+
+/* ---------- The grid ---------- */
+
+.cs-row {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: var(--gut);
+  padding: 0 var(--side);
+}
+.cs-row + .cs-row { margin-top: var(--gut); }
+.cs-row.cs-gap { margin-top: clamp(6rem, 13vw, 12rem); }
+
+.cs-span-12 { grid-column: 1 / -1; }
+.cs-span-6 { grid-column: span 6; }
+.cs-span-4 { grid-column: span 4; }
+.cs-span-3 { grid-column: span 3; }
+
+/* ---------- Words ---------- */
+
+/* One statement, set large. */
+.cs-intro {
+  padding-top: clamp(6rem, 14vw, 13rem);
+  align-items: end;
+}
+.cs-intro__line {
+  grid-column: 1 / span 8;
+  margin: 0;
+  font-family: var(--display);
+  font-size: clamp(2.25rem, 5.2vw, 5.25rem);
+  font-weight: 400;
+  line-height: 0.98;
+  letter-spacing: -0.04em;
+  text-wrap: balance;
+}
+.cs-intro__text {
+  grid-column: 10 / span 3;
+  max-width: 30ch;
+  margin: 0;
+  color: var(--ink-soft);
+  font-size: 1rem;
+  line-height: 1.55;
+}
+
+/* Small notes next to or under the pictures. */
+.cs-note {
+  margin: 0;
+  max-width: 28ch;
+  font-family: var(--display);
+  font-size: 0.875rem;
+  line-height: 1.4;
+}
+.cs-note b {
+  display: block;
+  font-weight: 500;
+  color: var(--ink);
+}
+.cs-note span { color: var(--ink-soft); }
+.cs-notes {
+  display: grid;
+  gap: 1.75rem;
+  align-content: end;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.cs-cap {
+  grid-column: 1 / -1;
+  margin: 0.75rem 0 0;
+  color: var(--ink-soft);
+  font-family: var(--display);
+  font-size: 0.875rem;
+}
+
+.cs-label {
+  display: inline-block;
+  margin: 0;
+  padding: 0.35rem 0.8rem;
+  border-radius: 999px;
+  background: var(--ink);
+  color: var(--grey);
+  font-family: var(--display);
+  font-size: 0.8125rem;
+  line-height: 1.3;
+}
+
+/* ---------- Pictures ---------- */
+
+.cs-pic {
+  margin: 0;
+  overflow: hidden;
+  background: rgba(127, 127, 127, 0.08);
+}
+.cs-pic img,
+.cs-pic video {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.cs-pic--paper { background: #FFFFFF; }
+.cs-pic--paper img { object-fit: contain; }
+
+/* Pictures settle into place as they arrive (browsers that support it). */
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .cs-pic img {
+      animation: cs-settle linear both;
+      animation-timeline: view();
+      animation-range: entry 0% entry 80%;
+    }
+  }
+}
+@keyframes cs-settle {
+  from { transform: scale(1.08); }
+  to { transform: scale(1); }
+}
+
+/* ---------- Brand colours: a strip of solid blocks ---------- */
+
+.cs-colors {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--gut);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.cs-colors li {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 0.5rem;
+  min-height: clamp(8rem, 16vw, 14rem);
+  padding: 1rem;
+  font-family: var(--display);
+  font-size: 0.875rem;
+}
+
+/* ---------- Closing ---------- */
+
+.cs-end {
+  padding-top: clamp(7rem, 15vw, 14rem);
+  padding-bottom: clamp(4rem, 8vw, 7rem);
+  align-items: end;
+}
+.cs-end__line {
+  grid-column: 1 / span 9;
+  margin: 0;
+  font-family: var(--display);
+  font-size: clamp(2.5rem, 6.4vw, 6.5rem);
+  font-weight: 400;
+  line-height: 0.95;
+  letter-spacing: -0.045em;
+  text-wrap: balance;
+}
+.cs-end__aside {
+  grid-column: 10 / span 3;
+  display: grid;
+  gap: 1.5rem;
+  justify-items: start;
+}
+.cs-end__aside p {
+  margin: 0;
+  color: var(--ink-soft);
+  font-size: 1rem;
+  line-height: 1.55;
+}
+.cs-credits {
+  margin: 0;
+  padding: 0 var(--side) clamp(2.5rem, 5vw, 4rem);
+  color: var(--ink-soft);
+  font-size: 0.8125rem;
+}
+
+/* ---------- Next project: the whole band is the link ---------- */
+
+.cs-next {
+  position: relative;
+  display: block;
+  height: clamp(22rem, 62vh, 40rem);
+  overflow: hidden;
+  background: #0E0F11;
+  color: #F1F2F2;
+  text-decoration: none;
+}
+.cs-next img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.65;
+  transform: scale(1.02);
+  transition: transform 900ms var(--ease), opacity 600ms ease;
+}
+.cs-next:hover img,
+.cs-next:focus-visible img { transform: scale(1.06); opacity: 0.85; }
+.cs-next__label {
+  position: absolute;
+  top: var(--side);
+  left: var(--side);
+  margin: 0;
+  font-family: var(--display);
+  font-size: 0.875rem;
+}
+.cs-next__name {
+  position: absolute;
+  left: var(--side);
+  bottom: var(--side);
+  margin: 0;
+  font-family: var(--next-font, var(--display));
+  font-size: clamp(4.5rem, 16vw, 15rem);
+  font-weight: 400;
+  line-height: 0.8;
+  letter-spacing: -0.03em;
+}
+
+/* ---------- Phones and tablets ---------- */
+
+@media (max-width: 899px) {
+  .cs-intro__line,
+  .cs-end__line { grid-column: 1 / -1; }
+  .cs-intro__text,
+  .cs-end__aside { grid-column: 1 / -1; margin-top: 1.5rem; }
+}
+
+@media (max-width: 699px) {
+  .cs-span-6,
+  .cs-span-4,
+  .cs-span-3 { grid-column: 1 / -1; }
+  .cs-colors li {
+    min-height: 7rem;
+    padding: 0.75rem;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-end;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cs-next img { transition: none; }
+}

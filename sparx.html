@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SPARX | IGGY Studio</title>
+  <meta name="description" content="SPARX, une housse intelligente qui transforme un sac de frappe en partenaire d'entraînement : concept, design produit, prototype, application et identité.">
+  <meta name="theme-color" content="#1A1A1A">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="assets/fonts/dm-sans-latin-opsz-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/ibm-plex-sans-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/sparx/hero.webp" as="image">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/case.css">
+  <link rel="stylesheet" href="css/sparx.css">
+</head>
+<body class="cs cs--sparx" data-title="meta.title.sparx" data-desc="meta.desc.sparx">
+  <a class="skip" href="#main" data-i18n="skip">Aller au contenu</a>
+
+  <header class="nav" id="nav">
+    <a class="nav__logo" href="index.html" aria-label="IGGY Studio">IGGY<span> Studio</span></a>
+
+    <nav class="nav__links" id="nav-links" aria-label="Navigation">
+      <a href="index.html#work" data-i18n="nav.work">Réalisations</a>
+      <a href="index.html#services" data-i18n="nav.services">Services</a>
+      <a href="index.html#studio" data-i18n="nav.studio">Studio</a>
+      <a href="index.html#faq" data-i18n="nav.faq">Questions</a>
+      <a class="btn btn--small nav__cta-mobile" href="index.html#contact" data-i18n="nav.cta">Démarrer un projet</a>
+    </nav>
+
+    <div class="nav__tools">
+      <div class="lang" role="group" aria-label="Langue" data-i18n-aria="lang.label">
+        <button type="button" data-lang="fr" aria-pressed="true">FR</button>
+        <button type="button" data-lang="nl" aria-pressed="false">NL</button>
+        <button type="button" data-lang="en" aria-pressed="false">EN</button>
+      </div>
+      <a class="btn btn--small nav__cta" href="index.html#contact" data-i18n="nav.cta">Démarrer un projet</a>
+      <button class="nav__menu" type="button" aria-expanded="false" aria-controls="nav-links" data-i18n="nav.menu">Menu</button>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- Opening: the product in its world. It stays put while the page slides over it. -->
+    <section class="cs-hero" id="top">
+      <img class="cs-hero__film" src="assets/sparx/hero.webp" width="1672" height="941" alt="Le sac SPARX dans le coin d'un ring de boxe, le nom SPARX peint sur le mur" data-i18n-alt="px.hero.alt" fetchpriority="high">
+      <h1 class="cs-hero__name">SPARX</h1>
+      <p class="cs-hero__tag"><span data-i18n="px.tag">Produit, application et identité</span><span data-i18n="px.place">Bruxelles</span></p>
+    </section>
+
+    <div class="cs-body">
+      <section class="cs-row cs-intro" aria-label="SPARX">
+        <h2 class="cs-intro__line" data-i18n="px.lead">Le partenaire d'entraînement caché dans un sac de frappe.</h2>
+        <p class="cs-intro__text" data-i18n="px.intro">Né pendant le confinement, quand Igor s'entraînait seul sans savoir si ses coups touchaient. Une housse à capteurs, une application et une marque, pensées comme un vrai produit.</p>
+      </section>
+
+      <section class="cs-row cs-gap" aria-label="Le produit" data-i18n-aria="px.product.label">
+        <ul class="cs-notes px-product__notes">
+          <li class="cs-note"><b data-i18n="px.n1.t">Voir où l'on frappe</b><span data-i18n="px.n1.p">Chaque coup est enregistré sur la zone touchée.</span></li>
+          <li class="cs-note"><b data-i18n="px.n2.t">Le compte en direct</b><span data-i18n="px.n2.p">Coups et rythme s'affichent pendant l'effort.</span></li>
+          <li class="cs-note"><b data-i18n="px.n3.t">Des rounds qui se gèrent seuls</b><span data-i18n="px.n3.p">Minuteur et signaux sonores, les yeux restent sur le sac.</span></li>
+          <li class="cs-note"><b data-i18n="px.n4.t">Sans abonnement</b><span data-i18n="px.n4.p">Tout fonctionne en local, sur le téléphone.</span></li>
+        </ul>
+        <figure class="cs-pic px-product__pic">
+          <img decoding="async" src="assets/sparx/product-800.webp" srcset="assets/sparx/product-800.webp 800w, assets/sparx/product.webp 1400w" sizes="(max-width: 899px) 100vw, 50vw" width="1400" height="1978" alt="La housse SPARX noire à zones rouges, avec sa sangle et son boîtier" data-i18n-alt="px.product.alt" loading="lazy">
+        </figure>
+      </section>
+
+      <section class="cs-row cs-gap" aria-label="L'application" data-i18n-aria="px.app.label">
+        <figure class="cs-pic cs-span-4 px-screen"><img decoding="async" src="assets/sparx/app-welcome.webp" width="965" height="444" alt="" loading="lazy"></figure>
+        <figure class="cs-pic cs-span-4 px-screen"><img decoding="async" src="assets/sparx/app-menu.webp" width="971" height="448" alt="" loading="lazy"></figure>
+        <figure class="cs-pic cs-span-4 px-screen"><img decoding="async" src="assets/sparx/app-rounds.webp" width="970" height="446" alt="" loading="lazy"></figure>
+        <figure class="cs-pic cs-span-4 px-screen"><img decoding="async" src="assets/sparx/app-memorize.webp" width="970" height="449" alt="" loading="lazy"></figure>
+        <figure class="cs-pic cs-span-4 px-screen"><img decoding="async" src="assets/sparx/app-reflex.webp" width="974" height="451" alt="" loading="lazy"></figure>
+        <figure class="cs-pic cs-span-4 px-screen"><img decoding="async" src="assets/sparx/app-scores.webp" width="970" height="449" alt="" loading="lazy"></figure>
+        <p class="cs-cap" data-i18n="px.app.cap">L'application : noir et blanc, de gros mots, lisible en plein round.</p>
+      </section>
+
+      <section class="cs-row cs-gap" aria-label="La marque" data-i18n-aria="px.brand.label">
+        <figure class="cs-pic px-mark px-mark--word"><img decoding="async" src="assets/sparx/mark-wordmark.webp" width="1400" height="628" alt="Le logo SPARX" data-i18n-alt="px.id.word" loading="lazy"></figure>
+        <figure class="cs-pic px-mark px-mark--boxer"><img decoding="async" src="assets/sparx/mark-boxer.webp" width="700" height="733" alt="Le pictogramme du boxeur" data-i18n-alt="px.id.boxer" loading="lazy"></figure>
+      </section>
+      <div class="cs-row">
+        <ul class="cs-colors cs-span-12">
+          <li class="is-red"><span data-i18n="px.id.red">Rouge</span><span>#ED1C23</span></li>
+          <li class="is-black"><span data-i18n="px.id.black">Noir</span><span>#1A1A1A</span></li>
+          <li class="is-cream"><span data-i18n="px.id.cream">Crème</span><span>#FAFAF0</span></li>
+        </ul>
+      </div>
+      <div class="cs-row">
+        <figure class="cs-pic cs-span-4 px-page"><img decoding="async" src="assets/sparx/mag-cover-600.webp" srcset="assets/sparx/mag-cover-600.webp 600w, assets/sparx/mag-cover.webp 1100w" sizes="(max-width: 699px) 100vw, 33vw" width="1100" height="1100" alt="Couverture du magazine SPARX" data-i18n-alt="px.id.mag1" loading="lazy"></figure>
+        <figure class="cs-pic cs-span-4 px-page"><img decoding="async" src="assets/sparx/mag-features-600.webp" srcset="assets/sparx/mag-features-600.webp 600w, assets/sparx/mag-features.webp 1100w" sizes="(max-width: 699px) 100vw, 33vw" width="1100" height="1100" alt="Page du magazine : le public et les fonctions" data-i18n-alt="px.id.mag2" loading="lazy"></figure>
+        <figure class="cs-pic cs-span-4 px-page"><img decoding="async" src="assets/sparx/mag-boxing-600.webp" srcset="assets/sparx/mag-boxing-600.webp 600w, assets/sparx/mag-boxing.webp 1100w" sizes="(max-width: 699px) 100vw, 33vw" width="1100" height="1100" alt="Page du magazine : We love boxing" data-i18n-alt="px.id.mag4" loading="lazy"></figure>
+        <p class="cs-cap" data-i18n="px.brand.cap">La marque : un nom qui claque, un boxeur, trois couleurs et un magazine de 40 pages.</p>
+      </div>
+
+      <section class="cs-row cs-end" aria-labelledby="end-title">
+        <h2 class="cs-end__line" id="end-title" data-i18n="px.end.line">Un prototype qui fonctionne, testé sur le ring.</h2>
+        <div class="cs-end__aside">
+          <p data-i18n="px.end.you">Un produit en tête, physique ou numérique ? Nous le dessinons, le construisons et le testons avec vous.</p>
+          <a class="btn" href="index.html#contact" data-i18n="px.next.cta">Démarrer un projet</a>
+        </div>
+      </section>
+
+      <a class="cs-next" href="star.html" style="--next-font: 'STAR', var(--display)">
+        <img decoding="async" src="assets/star/city-shibuya-800.webp" srcset="assets/star/city-shibuya-800.webp 800w, assets/star/city-shibuya.webp 1600w" sizes="100vw" width="1600" height="900" alt="" loading="lazy">
+        <p class="cs-next__label" data-i18n="cs.nextproj">Projet suivant</p>
+        <p class="cs-next__name">STAR</p>
+      </a>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <p data-i18n="footer.where">IGGY Studio, Bruxelles</p>
+    <p>&copy; 2026 IGGY Studio</p>
+  </footer>
+
+  <script src="js/vendor/lenis.min.js"></script>
+  <script src="js/i18n.js"></script>
+  <script src="js/i18n-star.js"></script>
+  <script src="js/i18n-sparx.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

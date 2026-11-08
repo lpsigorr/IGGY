@@ -159,25 +159,6 @@
     }
   });
 
-  /* ---------- What we do: one service in focus ---------- */
-
-  var svcItems = document.querySelectorAll(".svc__item");
-
-  function openService(item) {
-    svcItems.forEach(function (other) {
-      var on = other === item;
-      other.classList.toggle("is-active", on);
-      other.querySelector(".svc__tab").setAttribute("aria-expanded", on ? "true" : "false");
-      other.querySelector(".svc__panel").hidden = !on;
-    });
-  }
-
-  svcItems.forEach(function (item) {
-    item.querySelector(".svc__tab").addEventListener("click", function () {
-      openService(item);
-    });
-  });
-
   /* ---------- Greeting in four languages ---------- */
 
   var hello = document.querySelector(".hello__word");

@@ -1,335 +1,102 @@
-/* STAR case study (star.html).
-   The page keeps the IGGY shell (grey canvas, nav, type, footer). The client's own
-   world, black #1A1B1B, red #DE1F26 and white #F1F2F2 with the hand-drawn STAR
-   typeface, only appears inside the work itself: the opening film, the type
-   specimen and the swatches. */
+/* STAR case study (star.html), on top of css/case.css.
+   The client's own world, black #1A1B1B, red #DE1F26 and white #F1F2F2 with the
+   hand-drawn STAR typeface (loaded in css/case.css), only appears inside the work. */
 
-@font-face {
-  font-family: "STAR";
-  src: url("../assets/fonts/star-alphabet.woff2") format("woff2");
-  font-display: swap;
+.cs--star {
+  --brand-black: #1A1B1B;
+  --brand-red: #DE1F26;
+  --brand-white: #F1F2F2;
+  --brand-font: "STAR", var(--display);
 }
 
-.cs {
-  --star-black: #1A1B1B;
-  --star-red: #DE1F26;
-  --star-white: #F1F2F2;
-  --cs-gap: clamp(1rem, 2vw, 1.5rem);
-  --cs-radius: 1.5rem;
-}
-
-/* ---------- Opening ---------- */
-
-.cs-hero {
-  position: relative;
-  display: flex;
-  align-items: flex-end;
-  min-height: 34rem;
-  height: min(100svh, max(34rem, 62vw));
-  overflow: hidden;
-  background: var(--star-black);
-  color: var(--star-white);
-}
-
-.cs-hero__film {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-/* Darkens the bottom of the film so the name and line stay readable. */
-.cs-hero::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(to top, rgba(26, 27, 27, 0.92) 0%, rgba(26, 27, 27, 0.55) 32%, rgba(26, 27, 27, 0) 62%);
-  pointer-events: none;
-}
-
-.cs-hero__text {
-  position: relative;
-  z-index: 1;
-  width: 100%;
-  padding: 0 var(--edge) clamp(2rem, 5vw, 4rem);
-}
-
-.cs-hero__name {
+/* The doctrine, set large between the sketchbook and the identity */
+.st-doctrine {
+  grid-column: 2 / span 10;
   margin: 0;
-  font-family: "STAR", var(--display);
-  font-size: clamp(5rem, 17vw, 15rem);
+  font-family: var(--display);
+  font-size: clamp(2rem, 4.6vw, 4.5rem);
   font-weight: 400;
+  line-height: 1.02;
+  letter-spacing: -0.04em;
+  text-align: center;
+  text-wrap: balance;
+}
+
+/* The typeface, red on black */
+.st-type {
+  display: grid;
+  align-content: center;
+  min-height: clamp(18rem, 42vw, 38rem);
+  padding: clamp(1.5rem, 5vw, 5rem);
+  background: var(--brand-black);
+}
+.st-type p {
+  margin: 0;
+  color: var(--brand-red);
+  font-family: var(--brand-font);
+  font-size: clamp(2.6rem, 9.5vw, 10rem);
   line-height: 1;
   letter-spacing: -0.06em;
-  color: var(--star-red);
 }
 
-.cs-hero__line {
-  max-width: 30ch;
-  margin: clamp(0.75rem, 1.5vw, 1.25rem) 0 0;
-  font-family: var(--display);
-  font-size: clamp(1.2rem, 2vw, 1.6rem);
-  line-height: 1.25;
-  letter-spacing: -0.02em;
-}
+.cs--star .cs-colors .is-black { background: var(--brand-black); color: var(--brand-white); }
+.cs--star .cs-colors .is-red { background: var(--brand-red); color: #FFFFFF; }
+.cs--star .cs-colors .is-white { background: var(--brand-white); color: var(--brand-black); }
 
-/* ---------- Facts under the opening ---------- */
+.st-sheet { aspect-ratio: 1200 / 1696; }
+.st-note { aspect-ratio: 16 / 11; }
 
-.cs-meta {
-  max-width: calc(var(--max) + 2 * var(--edge));
-  margin-inline: auto;
-  padding: clamp(2.5rem, 5vw, 4rem) var(--edge) 0;
-}
-
-.cs-meta__facts {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 2fr);
-  gap: 0 var(--cs-gap);
-  margin: 0;
-}
-.cs-meta__facts div {
-  padding: 1rem 0;
-  border-top: 1px solid var(--line);
-}
-.cs-meta__facts dt {
-  font-family: var(--display);
-  font-size: 0.9375rem;
-  font-weight: 500;
-}
-.cs-meta__facts dd { margin: 0.25rem 0 0; color: var(--ink-soft); }
-.cs-meta__tags { margin-top: 0.5rem; }
-
-@media (max-width: 799px) {
-  .cs-meta__facts { grid-template-columns: 1fr 1fr; }
-  .cs-meta__wide { grid-column: 1 / -1; }
-}
-
-/* ---------- Sections ---------- */
-
-.cs-block { padding-top: clamp(5rem, 10vw, 9rem); }
-
-/* Title on the left, text on the right. */
-.cs-split {
-  display: grid;
-  grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
-  gap: 1.5rem var(--cs-gap);
-  align-items: start;
-}
-div.cs-split { margin-bottom: clamp(2.5rem, 5vw, 4rem); }
-.cs-split__body { margin: 0; max-width: 56ch; }
-.cs-split__body p { margin: 0 0 1rem; }
-.cs-split__body p:last-child { margin-bottom: 0; }
-
-@media (max-width: 899px) {
-  .cs-split { grid-template-columns: 1fr; }
-}
-
-.cs-quote {
-  margin: 0 0 1.75rem;
-  font-family: var(--display);
-  font-size: clamp(1.5rem, 2.4vw, 2.2rem);
-  line-height: 1.15;
-  letter-spacing: -0.03em;
-}
-
-/* ---------- Pictures ---------- */
-
-.cs-pic {
-  margin: 0;
-  overflow: hidden;
-  border-radius: var(--cs-radius);
-  background: rgba(43, 48, 58, 0.08);
-}
-.cs-pic img {
-  display: block;
-  width: 100%;
-  height: auto;
-}
-.cs-pic--paper { background: var(--white); }
-
-.cs-grid {
-  display: grid;
-  gap: var(--cs-gap);
-  align-items: start;
-}
-.cs-grid--2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-.cs-grid--3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
-.cs-grid--4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
-
-@media (max-width: 799px) {
-  .cs-grid--2,
-  .cs-grid--3 { grid-template-columns: 1fr; }
-  .cs-grid--4 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-}
-
-.cs-caption {
-  margin: 1rem 0 0;
-  color: var(--ink-soft);
-  font-family: var(--display);
-  font-size: 0.9375rem;
-}
-
-/* ---------- Identity ---------- */
-
-.cs-type {
-  margin: 0;
-  padding: clamp(2rem, 5vw, 4.5rem);
-  border-radius: var(--cs-radius);
-  background: var(--star-black);
-}
-.cs-type__sample {
-  margin: 0;
-  font-family: "STAR", var(--display);
-  font-size: clamp(2.6rem, 7.5vw, 7rem);
-  line-height: 1.02;
-  letter-spacing: -0.07em;
-  color: var(--star-red);
-}
-.cs-type figcaption {
-  margin-top: 1.5rem;
-  color: var(--on-ink-soft);
-  font-family: var(--display);
-  font-size: 0.9375rem;
-}
-
-.cs-swatches {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: var(--cs-gap);
-  margin: var(--cs-gap) 0;
-  padding: 0;
-  list-style: none;
-}
-.cs-swatch {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  min-height: clamp(7rem, 12vw, 10rem);
-  padding: 1.25rem 1.4rem;
-  border-radius: var(--cs-radius);
-  font-family: var(--display);
-}
-.cs-swatch__name { font-size: 1.125rem; }
-.cs-swatch__hex { font-size: 0.9375rem; opacity: 0.85; }
-.cs-swatch--black { background: var(--star-black); color: var(--star-white); }
-.cs-swatch--red { background: var(--star-red); color: var(--white); }
-.cs-swatch--white { background: var(--star-white); color: var(--star-black); border: 1px solid var(--line); }
-
-@media (max-width: 599px) {
-  .cs-swatches { grid-template-columns: 1fr; }
-  .cs-swatch { min-height: 5rem; flex-direction: row; align-items: center; }
-}
-
-/* ---------- Collection ---------- */
-
-.cs-flats {
+/* The collection: flat drawings on white, four across */
+.st-flats {
+  grid-column: 1 / -1;
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: var(--cs-gap);
+  gap: var(--gut);
   margin: 0;
   padding: 0;
   list-style: none;
 }
-.cs-flats li {
-  display: flex;
-  flex-direction: column;
-  padding: 1.25rem 1.25rem 1rem;
-  border-radius: 1.25rem;
-  background: var(--white);
+.st-flats li {
+  aspect-ratio: 1;
+  padding: clamp(0.75rem, 2vw, 2rem);
+  background: #FFFFFF;
 }
-.cs-flats img {
+.st-flats img {
   display: block;
   width: 100%;
-  height: auto;
-  aspect-ratio: 1;
+  height: 100%;
   object-fit: contain;
 }
-.cs-flats span {
-  margin-top: 0.75rem;
-  color: var(--ink-soft);
-  font-family: var(--display);
-  font-size: 0.875rem;
-  line-height: 1.35;
-}
-.cs-flats__wide { grid-column: span 2; }
-.cs-flats__wide img { aspect-ratio: auto; flex: 1; }
-.cs-flats__wide { justify-content: space-between; }
+.st-flats .is-wide { grid-column: span 3; aspect-ratio: auto; }
 
-@media (max-width: 899px) {
-  .cs-flats { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-}
+.st-street { aspect-ratio: 3 / 4; }
 
-/* ---------- Films ---------- */
-
-/* Column widths chosen so the 16:9 film and the 9:16 cut end up the same height. */
-.cs-films {
+/* Films: column widths chosen so the 16:9 film and the 9:16 cut are the same height */
+.st-films {
+  grid-column: 1 / -1;
   display: grid;
   grid-template-columns: minmax(0, 3.16fr) minmax(0, 1fr);
-  gap: var(--cs-gap);
-  align-items: start;
+  gap: var(--gut);
 }
-.cs-film { margin: 0; }
-.cs-film video {
+.st-films video {
   display: block;
   width: 100%;
   height: auto;
-  border-radius: var(--cs-radius);
-  background: var(--star-black);
-}
-.cs-film figcaption {
-  margin-top: 0.75rem;
-  color: var(--ink-soft);
-  font-family: var(--display);
-  font-size: 0.9375rem;
+  background: var(--brand-black);
 }
 
-@media (max-width: 799px) {
-  .cs-films { grid-template-columns: 1fr; }
-  .cs-film--tall { max-width: 20rem; }
-}
-
-/* ---------- In the city ---------- */
-
-.cs-label {
-  display: inline-block;
-  padding: 0.4rem 0.9rem;
-  border-radius: 999px;
-  background: var(--ink);
-  color: var(--grey);
-  font-family: var(--display);
-  font-size: 0.875rem;
-  line-height: 1.3;
-}
-
-/* Two columns that keep every picture at its own shape. */
-.cs-mosaic {
-  columns: 2;
-  column-gap: var(--cs-gap);
-}
-.cs-mosaic .cs-pic {
-  margin-bottom: var(--cs-gap);
-  break-inside: avoid;
-}
+/* In the city */
+.st-label { grid-column: 1 / -1; margin-bottom: 0.75rem; }
+.st-wide { aspect-ratio: 16 / 9; }
+.st-tall { aspect-ratio: 2 / 3; }
+.st-mid { aspect-ratio: 4 / 3; }
 
 @media (max-width: 699px) {
-  .cs-mosaic { columns: 1; }
-}
-
-/* ---------- Where STAR stands ---------- */
-
-.cs-end { padding-bottom: var(--space); }
-.cs-end__body p { max-width: 52ch; margin: 1.5rem 0 0; }
-.cs-end__body .cs-credits {
-  color: var(--ink-soft);
-  font-size: 0.875rem;
-}
-.cs-back {
-  display: inline-flex;
-  align-items: center;
-  min-height: 2.75rem;
-  margin-top: 1rem;
-  color: var(--ink);
-  font-family: var(--display);
-  text-underline-offset: 0.35em;
+  .st-doctrine { grid-column: 1 / -1; }
+  .st-flats { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .st-flats .is-wide { grid-column: span 1; aspect-ratio: 1; }
+  .st-street { grid-column: span 6; }
+  .st-films { grid-template-columns: 1fr; }
+  .st-films video { max-height: 80svh; object-fit: contain; }
+  .st-tall { grid-column: span 6; }
 }

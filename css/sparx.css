@@ -1,0 +1,66 @@
+/* SPARX case study (sparx.html), on top of css/case.css.
+   SPARX's own world: boxing red #ED1C23, black #1A1A1A and cream #FAFAF0.
+   It only shows inside the work: marks, colours and the photos. */
+
+.cs--sparx {
+  --brand-black: #1A1A1A;
+  --brand-red: #ED1C23;
+  --brand-white: #FAFAF0;
+}
+
+/* Opening: the photo carries the name on the wall, keep it in frame. */
+.cs--sparx .cs-hero__film { object-position: 20% 40%; }
+@media (max-width: 599px) {
+  .cs--sparx .cs-hero__film { object-position: 38% 40%; }
+}
+/* Heading kept for screen readers; the name is already on the wall. */
+.cs--sparx .cs-hero__name {
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+/* The product, with its four notes on the left */
+.px-product__notes { grid-column: 1 / span 4; }
+.px-product__pic {
+  grid-column: 8 / span 5;
+  aspect-ratio: 1400 / 1978;
+  background: #EDEDEA;
+}
+
+/* App screens: three by two, touching */
+.px-screen {
+  aspect-ratio: 965 / 444;
+  background: #F2F2F2;
+}
+
+/* Marks: the wordmark on black, the boxer on red, same height */
+.px-mark {
+  display: grid;
+  place-items: center;
+  height: clamp(16rem, 36vw, 34rem);
+  padding: 8%;
+}
+.px-mark img { width: 100%; height: 100%; object-fit: contain; }
+.px-mark--word { grid-column: span 8; background: var(--brand-black); }
+.px-mark--boxer { grid-column: span 4; background: var(--brand-red); }
+.px-mark--boxer img { max-width: 62%; }
+
+.cs--sparx .cs-colors .is-red { background: var(--brand-red); color: #FFFFFF; }
+.cs--sparx .cs-colors .is-black { background: var(--brand-black); color: var(--brand-white); }
+.cs--sparx .cs-colors .is-cream { background: var(--brand-white); color: var(--brand-black); }
+
+.px-page { aspect-ratio: 1; }
+
+@media (max-width: 899px) {
+  .px-product__notes { grid-column: 1 / -1; order: 2; margin-top: 1.5rem; }
+  .px-product__pic { grid-column: 1 / -1; }
+  .px-mark--word,
+  .px-mark--boxer { grid-column: 1 / -1; height: auto; aspect-ratio: 16 / 9; }
+}
+@media (max-width: 699px) {
+  .px-screen { grid-column: span 6; }
+  .px-page { grid-column: 1 / -1; }
+}

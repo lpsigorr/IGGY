@@ -11,17 +11,18 @@
   <link rel="preload" href="assets/fonts/ibm-plex-sans-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="assets/fonts/star-alphabet.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/case.css">
   <link rel="stylesheet" href="css/star.css">
 </head>
-<body class="cs" data-title="meta.title.star" data-desc="meta.desc.star">
+<body class="cs cs--star" data-title="meta.title.star" data-desc="meta.desc.star">
   <a class="skip" href="#main" data-i18n="skip">Aller au contenu</a>
 
   <header class="nav" id="nav">
     <a class="nav__logo" href="index.html" aria-label="IGGY Studio">IGGY<span> Studio</span></a>
 
     <nav class="nav__links" id="nav-links" aria-label="Navigation">
-      <a href="index.html#services" data-i18n="nav.services">Services</a>
       <a href="index.html#work" data-i18n="nav.work">Réalisations</a>
+      <a href="index.html#services" data-i18n="nav.services">Services</a>
       <a href="index.html#studio" data-i18n="nav.studio">Studio</a>
       <a href="index.html#faq" data-i18n="nav.faq">Questions</a>
       <a class="btn btn--small nav__cta-mobile" href="index.html#contact" data-i18n="nav.cta">Démarrer un projet</a>
@@ -39,183 +40,124 @@
   </header>
 
   <main id="main">
-    <!-- Opening: the brand film plays muted behind the name, set in the STAR typeface. -->
+    <!-- Opening: the brand film plays muted behind the name, set in the STAR typeface. It stays put while the page slides over it. -->
     <section class="cs-hero" id="top">
       <video class="cs-hero__film" autoplay muted loop playsinline preload="auto"
         poster="assets/star/star-loop-poster.webp" aria-label="Extrait du film de marque STAR, tourné à Tokyo" data-i18n-aria="cs.hero.video">
         <source src="assets/star/star-loop.mp4" type="video/mp4">
       </video>
-      <div class="cs-hero__text">
-        <h1 class="cs-hero__name">STAR</h1>
-        <p class="cs-hero__line" data-i18n="cs.hero.line">Une collection streetwear née dans un carnet, à Tokyo.</p>
+      <h1 class="cs-hero__name">STAR</h1>
+      <p class="cs-hero__tag"><span data-i18n="st.tag">Direction créative, identité et film</span><span data-i18n="st.place">Tokyo</span></p>
+    </section>
+
+    <div class="cs-body">
+      <section class="cs-row cs-intro" aria-label="STAR">
+        <h2 class="cs-intro__line" data-i18n="st.lead">Une collection streetwear née dans un carnet, à Tokyo.</h2>
+        <p class="cs-intro__text" data-i18n="st.intro">Dessinée pendant un stage chez YF Agency. Une doctrine, une police faite main, une collection et un film, pour celles et ceux qui avancent à leur façon.</p>
+      </section>
+
+      <section class="cs-row cs-gap" aria-label="Le carnet" data-i18n-aria="st.note.label">
+        <figure class="cs-pic cs-pic--paper cs-span-6 st-note"><img decoding="async" src="assets/star/note-1-800.webp" srcset="assets/star/note-1-800.webp 800w, assets/star/note-1.webp 1600w" sizes="(max-width: 699px) 100vw, 50vw" width="1600" height="1099" alt="Double page du carnet de croquis STAR" data-i18n-alt="cs.note.alt" loading="lazy"></figure>
+        <figure class="cs-pic cs-pic--paper cs-span-6 st-note"><img decoding="async" src="assets/star/note-2-800.webp" srcset="assets/star/note-2-800.webp 800w, assets/star/note-2.webp 1600w" sizes="(max-width: 699px) 100vw, 50vw" width="1600" height="1121" alt="Double page du carnet de croquis STAR" data-i18n-alt="cs.note.alt" loading="lazy"></figure>
+        <figure class="cs-pic cs-pic--paper cs-span-6 st-note"><img decoding="async" src="assets/star/note-3-800.webp" srcset="assets/star/note-3-800.webp 800w, assets/star/note-3.webp 1600w" sizes="(max-width: 699px) 100vw, 50vw" width="1600" height="1133" alt="Double page du carnet de croquis STAR" data-i18n-alt="cs.note.alt" loading="lazy"></figure>
+        <figure class="cs-pic cs-pic--paper cs-span-6 st-note"><img decoding="async" src="assets/star/note-4-800.webp" srcset="assets/star/note-4-800.webp 800w, assets/star/note-4.webp 1600w" sizes="(max-width: 699px) 100vw, 50vw" width="1600" height="1110" alt="Double page du carnet de croquis STAR" data-i18n-alt="cs.note.alt" loading="lazy"></figure>
+        <p class="cs-cap" data-i18n="st.note.cap">Tout part du carnet : les premières idées, telles quelles.</p>
+      </section>
+
+      <div class="cs-row cs-gap">
+        <blockquote class="st-doctrine" lang="en">STAR isn't just clothing, it's direction. A symbol for those building in silence and shining on purpose.</blockquote>
       </div>
-    </section>
 
-    <section class="cs-meta" aria-label="STAR">
-      <dl class="cs-meta__facts">
-        <div><dt data-i18n="cs.f.client">Client</dt><dd data-i18n="cs.f.client.v">YF Agency, Tokyo</dd></div>
-        <div><dt data-i18n="cs.f.year">Année</dt><dd>2025</dd></div>
-        <div class="cs-meta__wide"><dt data-i18n="cs.f.role">Ce qui a été fait</dt><dd data-i18n="cs.f.role.v">Doctrine, identité, police, logos, graphismes textiles, mockups 2D et 3D, film de marque</dd></div>
-      </dl>
-      <ul class="story__tags cs-meta__tags">
-        <li data-i18n="s1.what">Direction créative</li>
-        <li data-i18n="s2.what">Identité de marque</li>
-        <li data-i18n="s4.what">Contenu et motion</li>
-      </ul>
-    </section>
-
-    <section class="section cs-block" id="idea" aria-labelledby="idea-title">
-      <div class="section__inner cs-split">
-        <h2 class="h2" data-reveal id="idea-title" data-i18n="cs.idea.title">L'idée</h2>
-        <div class="cs-split__body">
-          <blockquote class="cs-quote" lang="en">STAR isn't just clothing, it's direction. A symbol for those building in silence and shining on purpose.</blockquote>
-          <p data-i18n="cs.idea.p1">Pendant un stage de design à Tokyo chez YF Agency, Igor remplit un carnet : des étoiles, des lettres, des phrases. Son responsable y voit une collection. STAR naît de là, une marque streetwear pour celles et ceux qui avancent à leur façon.</p>
-          <p data-i18n="cs.idea.p2">Avant de dessiner le premier vêtement, Igor écrit la doctrine de la collection : discipline, envie de grandir, personnalité. Pas faite pour se fondre dans la masse, faite pour se démarquer. Chaque pièce part de là.</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="section cs-block" id="notebook" aria-labelledby="note-title">
-      <div class="section__inner">
-        <div class="cs-split">
-          <h2 class="h2" data-reveal id="note-title" data-i18n="cs.note.title">Tout part du carnet</h2>
-          <p class="cs-split__body" data-i18n="cs.note.text">Les premières idées, telles quelles, entre deux journées à Tokyo. Le guide de marque tient déjà sur une page : une étoile noire, le mot STAR, trois couleurs.</p>
-        </div>
-        <div class="cs-grid cs-grid--2">
-          <figure class="cs-pic cs-pic--paper"><img decoding="async" src="assets/star/note-1-800.webp" srcset="assets/star/note-1-800.webp 800w, assets/star/note-1.webp 1600w" sizes="(max-width: 799px) 100vw, 38rem" width="1600" height="1099" alt="Double page du carnet de croquis STAR" data-i18n-alt="cs.note.alt" loading="lazy"></figure>
-          <figure class="cs-pic cs-pic--paper"><img decoding="async" src="assets/star/note-2-800.webp" srcset="assets/star/note-2-800.webp 800w, assets/star/note-2.webp 1600w" sizes="(max-width: 799px) 100vw, 38rem" width="1600" height="1121" alt="Double page du carnet de croquis STAR" data-i18n-alt="cs.note.alt" loading="lazy"></figure>
-          <figure class="cs-pic cs-pic--paper"><img decoding="async" src="assets/star/note-3-800.webp" srcset="assets/star/note-3-800.webp 800w, assets/star/note-3.webp 1600w" sizes="(max-width: 799px) 100vw, 38rem" width="1600" height="1133" alt="Double page du carnet de croquis STAR" data-i18n-alt="cs.note.alt" loading="lazy"></figure>
-          <figure class="cs-pic cs-pic--paper"><img decoding="async" src="assets/star/note-4-800.webp" srcset="assets/star/note-4-800.webp 800w, assets/star/note-4.webp 1600w" sizes="(max-width: 799px) 100vw, 38rem" width="1600" height="1110" alt="Double page du carnet de croquis STAR" data-i18n-alt="cs.note.alt" loading="lazy"></figure>
-        </div>
-      </div>
-    </section>
-
-    <section class="section cs-block" id="identity" aria-labelledby="id-title">
-      <div class="section__inner">
-        <div class="cs-split">
-          <h2 class="h2" data-reveal id="id-title" data-i18n="cs.id.title">Une identité dessinée à la main</h2>
-          <p class="cs-split__body" data-i18n="cs.id.text">Les croquis passent dans Illustrator. Les lettres du carnet deviennent un alphabet complet, puis une vraie police utilisée partout. Autour : un logo, une étoile avec des dents, une série de symboles et trois couleurs.</p>
-        </div>
-
-        <figure class="cs-type">
-          <p class="cs-type__sample" lang="en">A STAR IS BORN IN TOKYO</p>
-          <figcaption data-i18n="cs.id.font">La police STAR, dessinée lettre par lettre.</figcaption>
+      <section class="cs-row cs-gap" aria-label="L'identité" data-i18n-aria="st.id.label">
+        <figure class="st-type cs-span-12">
+          <p lang="en">A STAR IS BORN IN TOKYO</p>
         </figure>
-
-        <ul class="cs-swatches">
-          <li class="cs-swatch cs-swatch--black"><span class="cs-swatch__name" data-i18n="cs.id.black">Noir</span><span class="cs-swatch__hex">#1A1B1B</span></li>
-          <li class="cs-swatch cs-swatch--red"><span class="cs-swatch__name" data-i18n="cs.id.red">Rouge</span><span class="cs-swatch__hex">#DE1F26</span></li>
-          <li class="cs-swatch cs-swatch--white"><span class="cs-swatch__name" data-i18n="cs.id.white">Blanc</span><span class="cs-swatch__hex">#F1F2F2</span></li>
-        </ul>
-
-        <div class="cs-grid cs-grid--3">
-          <figure class="cs-pic cs-pic--paper"><img decoding="async" src="assets/star/alphabet-700.webp" srcset="assets/star/alphabet-700.webp 700w, assets/star/alphabet.webp 1200w" sizes="(max-width: 799px) 100vw, 25rem" width="1200" height="1696" alt="L'alphabet STAR, de A à Z et de 0 à 9" data-i18n-alt="cs.id.alphabet" loading="lazy"></figure>
-          <figure class="cs-pic cs-pic--paper"><img decoding="async" src="assets/star/assets-700.webp" srcset="assets/star/assets-700.webp 700w, assets/star/assets.webp 1200w" sizes="(max-width: 799px) 100vw, 25rem" width="1200" height="1696" alt="Logos et symboles de STAR" data-i18n-alt="cs.id.assets" loading="lazy"></figure>
-          <figure class="cs-pic"><img decoding="async" src="assets/star/poster-700.webp" srcset="assets/star/poster-700.webp 700w, assets/star/poster.webp 1400w" sizes="(max-width: 799px) 100vw, 25rem" width="1400" height="1876" alt="Affiche STAR" data-i18n-alt="cs.id.poster" loading="lazy"></figure>
-        </div>
-      </div>
-    </section>
-
-    <section class="section cs-block" id="collection" aria-labelledby="col-title">
-      <div class="section__inner">
-        <div class="cs-split">
-          <h2 class="h2" data-reveal id="col-title" data-i18n="cs.col.title">La collection</h2>
-          <p class="cs-split__body" data-i18n="cs.col.text">Maillots, t-shirts superposés, t-shirts imprimés, hoodie, jean, bonnet, ceinture et tote bag. Chaque pièce est dessinée à plat, puis montrée en mockup.</p>
-        </div>
-        <ul class="cs-flats">
-          <li><img decoding="async" src="assets/star/flat-jersey-black-red-front-500.webp" srcset="assets/star/flat-jersey-black-red-front-500.webp 500w, assets/star/flat-jersey-black-red-front.webp 900w" sizes="(max-width: 899px) 45vw, 17rem" width="900" height="672" alt="" loading="lazy"><span data-i18n="cs.col.jersey1">Maillot noir et rouge, devant</span></li>
-          <li><img decoding="async" src="assets/star/flat-jersey-black-red-back-500.webp" srcset="assets/star/flat-jersey-black-red-back-500.webp 500w, assets/star/flat-jersey-black-red-back.webp 900w" sizes="(max-width: 899px) 45vw, 17rem" width="900" height="657" alt="" loading="lazy"><span data-i18n="cs.col.jersey2">Maillot noir et rouge, dos</span></li>
-          <li><img decoding="async" src="assets/star/flat-jersey-red-white-front-500.webp" srcset="assets/star/flat-jersey-red-white-front-500.webp 500w, assets/star/flat-jersey-red-white-front.webp 900w" sizes="(max-width: 899px) 45vw, 17rem" width="900" height="653" alt="" loading="lazy"><span data-i18n="cs.col.jersey3">Maillot rouge et blanc</span></li>
-          <li><img decoding="async" src="assets/star/flat-layered-tee-back-500.webp" srcset="assets/star/flat-layered-tee-back-500.webp 500w, assets/star/flat-layered-tee-back.webp 900w" sizes="(max-width: 899px) 45vw, 17rem" width="900" height="831" alt="" loading="lazy"><span data-i18n="cs.col.layer1">T-shirt superposé, dos</span></li>
-          <li><img decoding="async" src="assets/star/flat-layered-tee-front-500.webp" srcset="assets/star/flat-layered-tee-front-500.webp 500w, assets/star/flat-layered-tee-front.webp 900w" sizes="(max-width: 899px) 45vw, 17rem" width="900" height="831" alt="" loading="lazy"><span data-i18n="cs.col.layer2">T-shirt superposé, devant</span></li>
-          <li><img decoding="async" src="assets/star/flat-tee-a-star-is-born-500.webp" srcset="assets/star/flat-tee-a-star-is-born-500.webp 500w, assets/star/flat-tee-a-star-is-born.webp 900w" sizes="(max-width: 899px) 45vw, 17rem" width="900" height="846" alt="" loading="lazy"><span data-i18n="cs.col.born">T-shirt A Star Is Born In Tokyo</span></li>
-          <li><img decoding="async" src="assets/star/flat-tee-tokyo-tower-500.webp" srcset="assets/star/flat-tee-tokyo-tower-500.webp 500w, assets/star/flat-tee-tokyo-tower.webp 900w" sizes="(max-width: 899px) 45vw, 17rem" width="900" height="847" alt="" loading="lazy"><span data-i18n="cs.col.tower">T-shirt Tokyo Tower</span></li>
-          <li><img decoding="async" src="assets/star/flat-tee-hand-500.webp" srcset="assets/star/flat-tee-hand-500.webp 500w, assets/star/flat-tee-hand.webp 900w" sizes="(max-width: 899px) 45vw, 17rem" width="900" height="845" alt="" loading="lazy"><span data-i18n="cs.col.hand">T-shirt main et étoile</span></li>
-          <li><img decoding="async" src="assets/star/flat-tee-star-drip-500.webp" srcset="assets/star/flat-tee-star-drip-500.webp 500w, assets/star/flat-tee-star-drip.webp 900w" sizes="(max-width: 899px) 45vw, 17rem" width="900" height="845" alt="" loading="lazy"><span data-i18n="cs.col.drip">T-shirt STAR</span></li>
-          <li><img decoding="async" src="assets/star/flat-tee-poster-black-500.webp" srcset="assets/star/flat-tee-poster-black-500.webp 500w, assets/star/flat-tee-poster-black.webp 900w" sizes="(max-width: 899px) 45vw, 17rem" width="900" height="845" alt="" loading="lazy"><span data-i18n="cs.col.poster">T-shirt affiche</span></li>
-          <li><img decoding="async" src="assets/star/flat-hoodie-jeans-a-star-is-born-500.webp" srcset="assets/star/flat-hoodie-jeans-a-star-is-born-500.webp 500w, assets/star/flat-hoodie-jeans-a-star-is-born.webp 900w" sizes="(max-width: 899px) 45vw, 17rem" width="900" height="1711" alt="" loading="lazy"><span data-i18n="cs.col.hoodie">Hoodie et jean</span></li>
-          <li><img decoding="async" src="assets/star/flat-beanie-red-star-500.webp" srcset="assets/star/flat-beanie-red-star-500.webp 500w, assets/star/flat-beanie-red-star.webp 900w" sizes="(max-width: 899px) 45vw, 17rem" width="900" height="801" alt="" loading="lazy"><span data-i18n="cs.col.beanie">Bonnet étoile</span></li>
-          <li><img decoding="async" src="assets/star/flat-tote-500.webp" srcset="assets/star/flat-tote-500.webp 500w, assets/star/flat-tote.webp 900w" sizes="(max-width: 899px) 45vw, 17rem" width="900" height="1125" alt="" loading="lazy"><span data-i18n="cs.col.tote">Tote bag</span></li>
-          <li class="cs-flats__wide"><img decoding="async" src="assets/star/flat-belt-buckle-red-star-500.webp" srcset="assets/star/flat-belt-buckle-red-star-500.webp 500w, assets/star/flat-belt-buckle-red-star.webp 900w" sizes="(max-width: 899px) 45vw, 17rem" width="900" height="223" alt="" loading="lazy"><span data-i18n="cs.col.belt">Ceinture STAR</span></li>
+      </section>
+      <div class="cs-row">
+        <ul class="cs-colors cs-span-12">
+          <li class="is-black"><span data-i18n="cs.id.black">Noir</span><span>#1A1B1B</span></li>
+          <li class="is-red"><span data-i18n="cs.id.red">Rouge</span><span>#DE1F26</span></li>
+          <li class="is-white"><span data-i18n="cs.id.white">Blanc</span><span>#F1F2F2</span></li>
         </ul>
       </div>
-    </section>
-
-    <section class="section cs-block" id="tokyo" aria-labelledby="tokyo-title">
-      <div class="section__inner">
-        <div class="cs-split">
-          <h2 class="h2" data-reveal id="tokyo-title" data-i18n="cs.tokyo.title">Tokyo, sur le terrain</h2>
-          <p class="cs-split__body" data-i18n="cs.tokyo.text">La collection vient de la ville. Igor la parcourt avec son téléphone : les avenues vues d'en haut, la tour de Tokyo, les distributeurs la nuit. Ces images nourrissent les graphismes et le film.</p>
-        </div>
-        <div class="cs-grid cs-grid--4">
-          <figure class="cs-pic"><img decoding="async" src="assets/star/tokyo-night-600.webp" srcset="assets/star/tokyo-night-600.webp 600w, assets/star/tokyo-night.webp 1200w" sizes="(max-width: 799px) 50vw, 18rem" width="1200" height="1600" alt="Tokyo la nuit, vu depuis la tour de Tokyo" data-i18n-alt="cs.tokyo.alt1" loading="lazy"></figure>
-          <figure class="cs-pic"><img decoding="async" src="assets/star/tokyo-tower-600.webp" srcset="assets/star/tokyo-tower-600.webp 600w, assets/star/tokyo-tower.webp 1200w" sizes="(max-width: 799px) 50vw, 18rem" width="1200" height="1600" alt="La tour de Tokyo illuminée la nuit" data-i18n-alt="cs.tokyo.alt2" loading="lazy"></figure>
-          <figure class="cs-pic"><img decoding="async" src="assets/star/tokyo-shinjuku-600.webp" srcset="assets/star/tokyo-shinjuku-600.webp 600w, assets/star/tokyo-shinjuku.webp 1200w" sizes="(max-width: 799px) 50vw, 18rem" width="1200" height="1600" alt="Immeubles de Shinjuku vus d'en haut" data-i18n-alt="cs.tokyo.alt3" loading="lazy"></figure>
-          <figure class="cs-pic"><img decoding="async" src="assets/star/tokyo-vending-600.webp" srcset="assets/star/tokyo-vending-600.webp 600w, assets/star/tokyo-vending.webp 1200w" sizes="(max-width: 799px) 50vw, 18rem" width="1200" height="1600" alt="Devant des distributeurs automatiques, la nuit" data-i18n-alt="cs.tokyo.alt4" loading="lazy"></figure>
-        </div>
-        <p class="cs-caption" data-i18n="cs.tokyo.caption">Photos d'Igor, Tokyo, 2025.</p>
+      <div class="cs-row">
+        <figure class="cs-pic cs-pic--paper cs-span-4 st-sheet"><img decoding="async" src="assets/star/alphabet-700.webp" srcset="assets/star/alphabet-700.webp 700w, assets/star/alphabet.webp 1200w" sizes="(max-width: 699px) 100vw, 33vw" width="1200" height="1696" alt="L'alphabet STAR, de A à Z et de 0 à 9" data-i18n-alt="cs.id.alphabet" loading="lazy"></figure>
+        <figure class="cs-pic cs-pic--paper cs-span-4 st-sheet"><img decoding="async" src="assets/star/assets-700.webp" srcset="assets/star/assets-700.webp 700w, assets/star/assets.webp 1200w" sizes="(max-width: 699px) 100vw, 33vw" width="1200" height="1696" alt="Logos et symboles de STAR" data-i18n-alt="cs.id.assets" loading="lazy"></figure>
+        <figure class="cs-pic cs-span-4 st-sheet"><img decoding="async" src="assets/star/poster-700.webp" srcset="assets/star/poster-700.webp 700w, assets/star/poster.webp 1400w" sizes="(max-width: 699px) 100vw, 33vw" width="1400" height="1876" alt="Affiche STAR" data-i18n-alt="cs.id.poster" loading="lazy"></figure>
+        <p class="cs-cap" data-i18n="st.id.cap">L'identité : un alphabet dessiné à la main devenu police, des symboles et trois couleurs.</p>
       </div>
-    </section>
 
-    <section class="section cs-block" id="film" aria-labelledby="film-title">
-      <div class="section__inner">
-        <div class="cs-split">
-          <h2 class="h2" data-reveal id="film-title" data-i18n="cs.film.title">Le film</h2>
-          <p class="cs-split__body" data-i18n="cs.film.text">Les images de Tokyo, montées en film de marque, avec l'alphabet STAR animé par-dessus. Une version large pour le site et une version verticale pour les réseaux.</p>
-        </div>
-        <div class="cs-films">
-          <figure class="cs-film cs-film--wide">
-            <video controls playsinline preload="none" poster="assets/star/star-film-poster.webp" width="1280" height="720">
-              <source src="assets/star/star-film.mp4" type="video/mp4">
-            </video>
-            <figcaption data-i18n="cs.film.wide">Film de marque, 16:9</figcaption>
-          </figure>
-          <figure class="cs-film cs-film--tall">
-            <video controls playsinline preload="none" poster="assets/star/star-social-poster.webp" width="720" height="1280">
-              <source src="assets/star/star-social.mp4" type="video/mp4">
-            </video>
-            <figcaption data-i18n="cs.film.tall">Version réseaux, 9:16</figcaption>
-          </figure>
-        </div>
-      </div>
-    </section>
+      <section class="cs-row cs-gap" aria-label="La collection" data-i18n-aria="st.col.label">
+        <ul class="st-flats">
+          <li><img decoding="async" src="assets/star/flat-jersey-black-red-front-500.webp" srcset="assets/star/flat-jersey-black-red-front-500.webp 500w, assets/star/flat-jersey-black-red-front.webp 900w" sizes="(max-width: 699px) 50vw, 25vw" width="900" height="672" alt="Maillot noir et rouge, devant" data-i18n-alt="cs.col.jersey1" loading="lazy"></li>
+          <li><img decoding="async" src="assets/star/flat-jersey-black-red-back-500.webp" srcset="assets/star/flat-jersey-black-red-back-500.webp 500w, assets/star/flat-jersey-black-red-back.webp 900w" sizes="(max-width: 699px) 50vw, 25vw" width="900" height="657" alt="Maillot noir et rouge, dos" data-i18n-alt="cs.col.jersey2" loading="lazy"></li>
+          <li><img decoding="async" src="assets/star/flat-jersey-red-white-front-500.webp" srcset="assets/star/flat-jersey-red-white-front-500.webp 500w, assets/star/flat-jersey-red-white-front.webp 900w" sizes="(max-width: 699px) 50vw, 25vw" width="900" height="653" alt="Maillot rouge et blanc" data-i18n-alt="cs.col.jersey3" loading="lazy"></li>
+          <li><img decoding="async" src="assets/star/flat-layered-tee-back-500.webp" srcset="assets/star/flat-layered-tee-back-500.webp 500w, assets/star/flat-layered-tee-back.webp 900w" sizes="(max-width: 699px) 50vw, 25vw" width="900" height="831" alt="T-shirt superposé, dos" data-i18n-alt="cs.col.layer1" loading="lazy"></li>
+          <li><img decoding="async" src="assets/star/flat-layered-tee-front-500.webp" srcset="assets/star/flat-layered-tee-front-500.webp 500w, assets/star/flat-layered-tee-front.webp 900w" sizes="(max-width: 699px) 50vw, 25vw" width="900" height="831" alt="T-shirt superposé, devant" data-i18n-alt="cs.col.layer2" loading="lazy"></li>
+          <li><img decoding="async" src="assets/star/flat-tee-a-star-is-born-500.webp" srcset="assets/star/flat-tee-a-star-is-born-500.webp 500w, assets/star/flat-tee-a-star-is-born.webp 900w" sizes="(max-width: 699px) 50vw, 25vw" width="900" height="846" alt="T-shirt A Star Is Born In Tokyo" data-i18n-alt="cs.col.born" loading="lazy"></li>
+          <li><img decoding="async" src="assets/star/flat-tee-tokyo-tower-500.webp" srcset="assets/star/flat-tee-tokyo-tower-500.webp 500w, assets/star/flat-tee-tokyo-tower.webp 900w" sizes="(max-width: 699px) 50vw, 25vw" width="900" height="847" alt="T-shirt Tokyo Tower" data-i18n-alt="cs.col.tower" loading="lazy"></li>
+          <li><img decoding="async" src="assets/star/flat-tee-hand-500.webp" srcset="assets/star/flat-tee-hand-500.webp 500w, assets/star/flat-tee-hand.webp 900w" sizes="(max-width: 699px) 50vw, 25vw" width="900" height="845" alt="T-shirt main et étoile" data-i18n-alt="cs.col.hand" loading="lazy"></li>
+          <li><img decoding="async" src="assets/star/flat-tee-star-drip-500.webp" srcset="assets/star/flat-tee-star-drip-500.webp 500w, assets/star/flat-tee-star-drip.webp 900w" sizes="(max-width: 699px) 50vw, 25vw" width="900" height="845" alt="T-shirt STAR" data-i18n-alt="cs.col.drip" loading="lazy"></li>
+          <li><img decoding="async" src="assets/star/flat-tee-poster-black-500.webp" srcset="assets/star/flat-tee-poster-black-500.webp 500w, assets/star/flat-tee-poster-black.webp 900w" sizes="(max-width: 699px) 50vw, 25vw" width="900" height="845" alt="T-shirt affiche" data-i18n-alt="cs.col.poster" loading="lazy"></li>
+          <li><img decoding="async" src="assets/star/flat-hoodie-jeans-a-star-is-born-500.webp" srcset="assets/star/flat-hoodie-jeans-a-star-is-born-500.webp 500w, assets/star/flat-hoodie-jeans-a-star-is-born.webp 900w" sizes="(max-width: 699px) 50vw, 25vw" width="900" height="1711" alt="Hoodie et jean" data-i18n-alt="cs.col.hoodie" loading="lazy"></li>
+          <li><img decoding="async" src="assets/star/flat-beanie-red-star-500.webp" srcset="assets/star/flat-beanie-red-star-500.webp 500w, assets/star/flat-beanie-red-star.webp 900w" sizes="(max-width: 699px) 50vw, 25vw" width="900" height="801" alt="Bonnet étoile" data-i18n-alt="cs.col.beanie" loading="lazy"></li>
+          <li><img decoding="async" src="assets/star/flat-tote-500.webp" srcset="assets/star/flat-tote-500.webp 500w, assets/star/flat-tote.webp 900w" sizes="(max-width: 699px) 50vw, 25vw" width="900" height="1125" alt="Tote bag" data-i18n-alt="cs.col.tote" loading="lazy"></li>
+          <li class="is-wide"><img decoding="async" src="assets/star/flat-belt-buckle-red-star-500.webp" srcset="assets/star/flat-belt-buckle-red-star-500.webp 500w, assets/star/flat-belt-buckle-red-star.webp 900w" sizes="(max-width: 699px) 50vw, 25vw" width="900" height="223" alt="Ceinture STAR" data-i18n-alt="cs.col.belt" loading="lazy"></li>
+        </ul>
+        <p class="cs-cap" data-i18n="st.col.cap">La collection : maillots, t-shirts, hoodie, jean, bonnet, ceinture et tote bag.</p>
+      </section>
 
-    <section class="section cs-block" id="city" aria-labelledby="city-title">
-      <div class="section__inner">
-        <div class="cs-split">
-          <h2 class="h2" data-reveal id="city-title" data-i18n="cs.city.title">Dans la ville</h2>
-          <div class="cs-split__body">
-            <p class="cs-label" data-i18n="cs.city.label">Campagne visualisée avec l'IA, à partir des designs originaux.</p>
-            <p data-i18n="cs.city.text">Pour montrer la collection portée et vue dans la rue, nous avons placé les vraies pièces dans des photos de Tokyo et de shootings : sur les écrans de Shibuya, sur des gens, jusque dans les détails.</p>
-          </div>
-        </div>
-        <div class="cs-mosaic">
-          <figure class="cs-pic"><img decoding="async" src="assets/star/city-cage-800.webp" srcset="assets/star/city-cage-800.webp 800w, assets/star/city-cage.webp 1448w" sizes="(max-width: 699px) 100vw, 38rem" width="1448" height="1086" alt="Quatre garçons dans une cage grillagée, en t-shirts et bonnet STAR" data-i18n-alt="cs.city.alt1" loading="lazy"></figure>
-          <figure class="cs-pic"><img decoding="async" src="assets/star/city-shibuya-800.webp" srcset="assets/star/city-shibuya-800.webp 800w, assets/star/city-shibuya.webp 1600w" sizes="(max-width: 699px) 100vw, 38rem" width="1600" height="900" alt="Écran STAR au carrefour de Shibuya, la nuit" data-i18n-alt="cs.city.alt2" loading="lazy"></figure>
-          <figure class="cs-pic"><img decoding="async" src="assets/star/city-beach-800.webp" srcset="assets/star/city-beach-800.webp 800w, assets/star/city-beach.webp 1025w" sizes="(max-width: 699px) 100vw, 38rem" width="1025" height="1534" alt="Une fille en t-shirt main et étoile, un garçon de dos en hoodie et jean STAR, devant la mer" data-i18n-alt="cs.city.alt3" loading="lazy"></figure>
-          <figure class="cs-pic"><img decoding="async" src="assets/star/city-studio-800.webp" srcset="assets/star/city-studio-800.webp 800w, assets/star/city-studio.webp 1025w" sizes="(max-width: 699px) 100vw, 38rem" width="1025" height="1535" alt="Un garçon en doudoune noire, t-shirt rouge et bonnet étoile STAR" data-i18n-alt="cs.city.alt4" loading="lazy"></figure>
-          <figure class="cs-pic"><img decoding="async" src="assets/star/city-belt-800.webp" srcset="assets/star/city-belt-800.webp 800w, assets/star/city-belt.webp 1536w" sizes="(max-width: 699px) 100vw, 38rem" width="1536" height="1024" alt="Ceinture STAR sur un jean, en gros plan" data-i18n-alt="cs.city.alt5" loading="lazy"></figure>
-          <figure class="cs-pic"><img decoding="async" src="assets/star/city-crossing-800.webp" srcset="assets/star/city-crossing-800.webp 800w, assets/star/city-crossing.webp 1535w" sizes="(max-width: 699px) 100vw, 38rem" width="1535" height="1024" alt="Le carrefour de Shibuya vu d'en haut, avec STAR sur le grand écran" data-i18n-alt="cs.city.alt6" loading="lazy"></figure>
-        </div>
-      </div>
-    </section>
+      <section class="cs-row cs-gap" aria-label="Tokyo" data-i18n-aria="st.tokyo.label">
+        <figure class="cs-pic cs-span-3 st-street"><img decoding="async" src="assets/star/tokyo-night-600.webp" srcset="assets/star/tokyo-night-600.webp 600w, assets/star/tokyo-night.webp 1200w" sizes="(max-width: 699px) 50vw, 25vw" width="1200" height="1600" alt="Tokyo la nuit, vu depuis la tour de Tokyo" data-i18n-alt="cs.tokyo.alt1" loading="lazy"></figure>
+        <figure class="cs-pic cs-span-3 st-street"><img decoding="async" src="assets/star/tokyo-tower-600.webp" srcset="assets/star/tokyo-tower-600.webp 600w, assets/star/tokyo-tower.webp 1200w" sizes="(max-width: 699px) 50vw, 25vw" width="1200" height="1600" alt="La tour de Tokyo illuminée la nuit" data-i18n-alt="cs.tokyo.alt2" loading="lazy"></figure>
+        <figure class="cs-pic cs-span-3 st-street"><img decoding="async" src="assets/star/tokyo-shinjuku-600.webp" srcset="assets/star/tokyo-shinjuku-600.webp 600w, assets/star/tokyo-shinjuku.webp 1200w" sizes="(max-width: 699px) 50vw, 25vw" width="1200" height="1600" alt="Immeubles de Shinjuku vus d'en haut" data-i18n-alt="cs.tokyo.alt3" loading="lazy"></figure>
+        <figure class="cs-pic cs-span-3 st-street"><img decoding="async" src="assets/star/tokyo-vending-600.webp" srcset="assets/star/tokyo-vending-600.webp 600w, assets/star/tokyo-vending.webp 1200w" sizes="(max-width: 699px) 50vw, 25vw" width="1200" height="1600" alt="Devant des distributeurs automatiques, la nuit" data-i18n-alt="cs.tokyo.alt4" loading="lazy"></figure>
+        <p class="cs-cap" data-i18n="st.tokyo.cap">Tokyo, à pied. Photos d'Igor, 2025.</p>
+      </section>
 
-    <section class="section cs-block cs-end" id="outcome" aria-labelledby="end-title">
-      <div class="section__inner work">
-        <div class="cs-end__body">
-          <h2 class="h2" data-reveal id="end-title" data-i18n="cs.end.title">Où en est STAR</h2>
-          <p data-i18n="cs.end.text">STAR est allée du premier croquis à une collection complète, une identité et un film. La marque appartient à YF Agency et la première sortie n'a pas encore eu lieu. C'est le projet qui montre le mieux ce que fait IGGY Studio : partir d'une idée et la rendre réelle.</p>
-          <p class="cs-credits" data-i18n="cs.end.credits">Publié avec l'accord de YF Agency. Photos de base de la campagne : Unsplash, dont Timo Volz et Louie Nicolo Nimor.</p>
-          <a class="cs-back" href="index.html#work" data-i18n="cs.back">Toutes les réalisations</a>
+      <section class="cs-row cs-gap" aria-label="Le film" data-i18n-aria="st.film.label">
+        <div class="st-films">
+          <video controls playsinline preload="none" poster="assets/star/star-film-poster.webp" width="1280" height="720" aria-label="Film de marque, 16:9" data-i18n-aria="cs.film.wide">
+            <source src="assets/star/star-film.mp4" type="video/mp4">
+          </video>
+          <video controls playsinline preload="none" poster="assets/star/star-social-poster.webp" width="720" height="1280" aria-label="Version réseaux, 9:16" data-i18n-aria="cs.film.tall">
+            <source src="assets/star/star-social.mp4" type="video/mp4">
+          </video>
         </div>
-        <aside class="next">
-          <h3 class="next__title" data-i18n="cs.next.title">Votre idée pourrait être la prochaine.</h3>
-          <div>
-            <a class="btn btn--ink" href="index.html#contact" data-i18n="cs.next.cta">Démarrer un projet</a>
-          </div>
-        </aside>
+        <p class="cs-cap" data-i18n="st.film.cap">Le film de marque, et sa version pour les réseaux.</p>
+      </section>
+
+      <section class="cs-row cs-gap" aria-label="Dans la ville" data-i18n-aria="st.city.label">
+        <p class="st-label"><span class="cs-label" data-i18n="cs.city.label">Campagne visualisée avec l'IA, à partir des designs originaux.</span></p>
+        <figure class="cs-pic cs-span-12 st-wide"><img decoding="async" src="assets/star/city-shibuya-800.webp" srcset="assets/star/city-shibuya-800.webp 800w, assets/star/city-shibuya.webp 1600w" sizes="100vw" width="1600" height="900" alt="Écran STAR au carrefour de Shibuya, la nuit" data-i18n-alt="cs.city.alt2" loading="lazy"></figure>
+      </section>
+      <div class="cs-row">
+        <figure class="cs-pic cs-span-6 st-tall"><img decoding="async" src="assets/star/city-beach-800.webp" srcset="assets/star/city-beach-800.webp 800w, assets/star/city-beach.webp 1025w" sizes="(max-width: 699px) 50vw, 50vw" width="1025" height="1534" alt="Une fille en t-shirt main et étoile, un garçon de dos en hoodie et jean STAR, devant la mer" data-i18n-alt="cs.city.alt3" loading="lazy"></figure>
+        <figure class="cs-pic cs-span-6 st-tall"><img decoding="async" src="assets/star/city-studio-800.webp" srcset="assets/star/city-studio-800.webp 800w, assets/star/city-studio.webp 1025w" sizes="(max-width: 699px) 50vw, 50vw" width="1025" height="1535" alt="Un garçon en doudoune noire, t-shirt rouge et bonnet étoile STAR" data-i18n-alt="cs.city.alt4" loading="lazy"></figure>
       </div>
-    </section>
+      <div class="cs-row">
+        <figure class="cs-pic cs-span-6 st-mid"><img decoding="async" src="assets/star/city-cage-800.webp" srcset="assets/star/city-cage-800.webp 800w, assets/star/city-cage.webp 1448w" sizes="(max-width: 699px) 100vw, 50vw" width="1448" height="1086" alt="Quatre garçons dans une cage grillagée, en t-shirts et bonnet STAR" data-i18n-alt="cs.city.alt1" loading="lazy"></figure>
+        <figure class="cs-pic cs-span-6 st-mid"><img decoding="async" src="assets/star/city-belt-800.webp" srcset="assets/star/city-belt-800.webp 800w, assets/star/city-belt.webp 1536w" sizes="(max-width: 699px) 100vw, 50vw" width="1536" height="1024" alt="Ceinture STAR sur un jean, en gros plan" data-i18n-alt="cs.city.alt5" loading="lazy"></figure>
+      </div>
+      <div class="cs-row">
+        <figure class="cs-pic cs-span-12 st-wide"><img decoding="async" src="assets/star/city-crossing-800.webp" srcset="assets/star/city-crossing-800.webp 800w, assets/star/city-crossing.webp 1535w" sizes="100vw" width="1535" height="1024" alt="Le carrefour de Shibuya vu d'en haut, avec STAR sur le grand écran" data-i18n-alt="cs.city.alt6" loading="lazy"></figure>
+      </div>
+
+      <section class="cs-row cs-end" aria-labelledby="end-title">
+        <h2 class="cs-end__line" id="end-title" data-i18n="st.end.line">D'un carnet à une collection complète.</h2>
+        <div class="cs-end__aside">
+          <p data-i18n="st.end.you">Une marque à lancer, une collection à dessiner ? Nous partons de votre idée et la rendons réelle.</p>
+          <a class="btn" href="index.html#contact" data-i18n="cs.next.cta">Démarrer un projet</a>
+        </div>
+      </section>
+      <p class="cs-credits" data-i18n="cs.end.credits">Publié avec l'accord de YF Agency. Photos de base de la campagne : Unsplash, dont Timo Volz et Louie Nicolo Nimor.</p>
+
+      <a class="cs-next" href="sparx.html">
+        <img decoding="async" src="assets/sparx/mag-boxing.webp" width="1100" height="1100" alt="" loading="lazy" style="object-position: 50% 70%">
+        <p class="cs-next__label" data-i18n="cs.nextproj">Projet suivant</p>
+        <p class="cs-next__name">SPARX</p>
+      </a>
+    </div>
   </main>
 
   <footer class="footer">
