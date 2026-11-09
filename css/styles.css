@@ -55,6 +55,63 @@
 html {
   scroll-behavior: smooth;
   -webkit-text-size-adjust: 100%;
+  scrollbar-width: none; /* page scrollbar hidden, scrolling still works */
+}
+html::-webkit-scrollbar { display: none; }
+
+/* Custom cursor (js/cursor.js): a black dot, a ring grows out of it over anything clickable.
+   Only with a mouse or trackpad; text fields keep the normal text cursor. */
+html.has-cursor,
+html.has-cursor * { cursor: none; }
+html.has-cursor input:not([type="submit"]):not([type="checkbox"]):not([type="radio"]),
+html.has-cursor textarea { cursor: text; }
+
+.cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  width: 0;
+  height: 0;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 200ms ease;
+}
+.cursor.is-on { opacity: 1; }
+.cursor.is-typing { opacity: 0; }
+.cursor__dot,
+.cursor__ring {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 50%;
+}
+.cursor__dot {
+  width: 8px;
+  height: 8px;
+  margin: -4px 0 0 -4px;
+  background: var(--ink);
+  transition: transform 200ms var(--ease), background-color 200ms ease;
+}
+.cursor__ring {
+  width: 40px;
+  height: 40px;
+  margin: -20px 0 0 -20px;
+  border: 1px solid var(--ink);
+  transform: scale(0.2);
+  opacity: 0;
+  transition: transform 350ms var(--ease), opacity 250ms ease, border-color 200ms ease;
+}
+.cursor.is-link .cursor__ring { transform: scale(1); opacity: 1; }
+.cursor.is-down .cursor__dot { transform: scale(0.6); }
+.cursor.is-down .cursor__ring { transform: scale(0.85); }
+/* Over dark pictures the cursor turns light so it stays visible. */
+.cursor.is-light .cursor__dot { background: #F1F2F2; }
+.cursor.is-light .cursor__ring { border-color: #F1F2F2; }
+
+@media (prefers-reduced-motion: reduce) {
+  .cursor__dot,
+  .cursor__ring { transition: none; }
 }
 
 /* Smooth scroll (Lenis, js/vendor/lenis.min.js) */
